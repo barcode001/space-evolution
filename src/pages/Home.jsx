@@ -1,14 +1,23 @@
-import React from "react";
-import clientInfo from "../config/clientInfo";
 import Hero from "components/Hero";
+import React from "react";
+import ServicesOverview from "pages/ServicesOverview";
+import AboutUs from "pages/AboutUs";
+import Gallery from "components/Gallery";
+import Testimonials from "./Testimonials";
+import CallToAction from "./CallToAction";
+import Contact from "./Contact";
 
 function Home() {
   return (
-    <div>
-      <h1>Welcome to {clientInfo.businessName}</h1>
-      <p>{clientInfo.tagline}</p>
+    <>
       <Hero />
-    </div>
+      <ServicesOverview />
+      <AboutUs />
+      <Gallery />
+      <Testimonials />
+      <CallToAction />
+      <Contact />
+    </>
   );
 }
 

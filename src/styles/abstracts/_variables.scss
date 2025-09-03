@@ -1,17 +1,36 @@
-// Colors
-$color-primary: #007bff;
-$color-secondary: #177fd9;
-$color-accent: #ff5722;
-$color-background: #f9f9f9;
-$color-text: #333;
+/* =========================
+   Space Evolution – Design Tokens
+   ========================= */
 
-// Typography
-$font-family: "Roboto", sans-serif;
+/* Colors (brand) */
+$color-primary: #0f172a; // Deep navy (headers, footer, buttons)
+$color-primary-600: #1e293b; // Navy hover / darker surfaces
+$color-accent: #f5c84b; // Warm gold (CTA, highlights)
+$color-accent-600: #e0b535; // Gold hover
+$color-secondary: #ff7a1a; // Supporting accent (calls to action, badges)
+
+/* Neutrals */
+$color-bg: #fafafa; // App background (light)
+$color-surface: #ffffff; // Cards / panels
+$color-border: rgba(15, 23, 42, 0.08);
+
+$color-text: #0b1220; // Body text on light
+$color-text-muted: #5b6472; // Secondary text
+$color-text-inverse: #ffffff; // Text on dark/navy
+
+/* Feedback (optional but handy) */
+$color-success: #16a34a;
+$color-warning: #f59e0b;
+$color-danger: #ef4444;
+
+/* Typography */
+$font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
 $font-size-base: 16px;
 $font-weight-regular: 400;
+$font-weight-medium: 500;
 $font-weight-bold: 700;
 
-// Spacing
+/* Spacing scale */
 $spacing: (
   xs: 0.25rem,
   // 4px
@@ -21,11 +40,19 @@ $spacing: (
   // 16px
   lg: 2rem,
   // 32px
-  xl: 4rem // 64px,,,,,,
+  xl: 4rem // 64px,,
 );
 
-// Borders
-$border-radius: 12px;
+/* Radius & Shadows */
+$border-radius: 14px;
+$radius-sm: 10px;
+$radius-md: 20px;
+$radius-pill: 999px;
 
-// Shadows
-$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-sm: 0 2px 10px rgba(2, 6, 23, 0.06);
+$shadow-md: 0 8px 24px rgba(2, 6, 23, 0.1);
+$shadow-lg: 0 18px 40px rgba(2, 6, 23, 0.14);
+
+/* Gradients (nice for hero/CTA) */
+$gradient-navy: linear-gradient(135deg, #0f172a 0%, #0a1020 100%);
+$gradient-gold: linear-gradient(135deg, #f5c84b 0%, #e0b535 100%);

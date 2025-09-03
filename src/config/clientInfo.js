@@ -1,15 +1,15 @@
 const clientInfo = {
-  businessName: "Business Name Here",
+  businessName: "Space Evolution",
   tagline: "Your business tagline goes here",
-  ownerName: "Owner Name",
+  ownerName: "Eladio Carrillo",
   location: {
-    city: "City",
-    state: "State"
+    city: "Houston",
+    state: "TX"
   },
   contact: {
-    phone: "(000) 000-0000",
-    email: "info@businessdomain.com",
-    address: "1234 Business Address, Suite 100"
+    phone: "346-479-1647",
+    email: "spacevolution1@yahoo.com",
+    address: "Houston, TX 77013"
   },
   social: {
     instagram: "https://instagram.com/yourbusiness",

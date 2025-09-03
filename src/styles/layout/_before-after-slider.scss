@@ -1,0 +1,272 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+
+/* Tell the browser our custom property is a % and animatable */
+@property --pos {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 50%;
+}
+
+.bas {
+  --pos: 50%;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: $shadow-md;
+  background: $color-border;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+
+  /* Performance hints */
+  contain: layout paint size; /* isolate painting/layout to this box */
+  will-change: transform; /* general nudge for compositing */
+
+  /* Smooth autoplay */
+  animation: slide-pos 12s linear infinite alternate;
+  animation-play-state: running;
+
+  @keyframes slide-pos {
+    0% {
+      --pos: 0%;
+    }
+    100% {
+      --pos: 100%;
+    }
+  }
+
+  &.is-paused {
+    animation-play-state: paused;
+  }
+
+  /* Images */
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(85%);
+
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  &__img--after {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* BEFORE overlay, clipped by --pos (no transition here) */
+  &__before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    clip-path: polygon(0 0, var(--pos) 0, var(--pos) 100%, 0 100%);
+  }
+  &__img--before {
+    position: absolute;
+    inset: 0;
+  }
+
+  /* Feather without blend mode (cheaper) */
+  &__feather {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--pos) - 14px);
+    width: 28px;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.08) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  /* Divider & handle track the same var */
+  &__divider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--pos);
+    transform: translateX(-0.5px);
+    width: 1px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+  }
+
+  &__handle {
+    // position: absolute;
+    // top: 50%;
+    // left: var(--pos);
+    // transform: translate(-50%, -50%);
+    // width: rem(36);
+    // height: rem(36);
+    // border-radius: 999px;
+    // border: 1px solid rgba(2, 6, 23, 0.14);
+    // background: $color-surface;
+    // box-shadow: $shadow-sm;
+    // display: grid;
+    // place-items: center;
+
+    .bas__grip {
+      width: rem(14);
+      height: rem(14);
+      border-radius: 999px;
+      background: $color-primary;
+      box-shadow: inset 0 0 0 2px $color-text-inverse;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: rem(12);
+    font-size: rem(12);
+    padding: 0.25rem 0.5rem;
+    border-radius: $radius-pill;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    letter-spacing: 0.2px;
+
+    &--before {
+      left: rem(12);
+    }
+    &--after {
+      right: rem(12);
+    }
+  }
+
+  /* Reduced motion: stop animation but keep first frame */
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/* Controls container: bottom-right overlay */
+.bas__controls {
+  position: absolute;
+  right: rem(10);
+  bottom: rem(10);
+  z-index: 3;
+}
+
+/* The round button */
+.bas__control {
+  display: inline-grid;
+  place-items: center;
+  width: rem(40);
+  height: rem(40);
+  border-radius: 999px;
+  border: 1px solid rgba(2, 6, 23, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: $shadow-sm;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.06s ease,
+    background-color 0.15s ease;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+  &:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 2px;
+  }
+}
+
+/* Minimal pause / play icon via CSS */
+.bas__icon {
+  position: relative;
+  width: rem(14);
+  height: rem(14);
+  display: block;
+}
+
+/* Pause (two bars) */
+.bas__icon--pause::before,
+.bas__icon--pause::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: $color-primary;
+  border-radius: 2px;
+}
+.bas__icon--pause::before {
+  left: 3px;
+}
+.bas__icon--pause::after {
+  right: 3px;
+}
+
+/* Play (triangle) */
+.bas__icon--play {
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  background: $color-primary;
+}
+
+.bas {
+  // overlays shouldn't eat taps
+  .bas__before,
+  .bas__feather,
+  .bas__divider,
+  .bas__handle {
+    pointer-events: none;
+  }
+
+  .bas__controls {
+    position: absolute;
+    right: rem(10);
+    bottom: rem(10);
+    z-index: 10;
+    pointer-events: auto;
+  }
+
+  .bas__control {
+    width: rem(44);
+    height: rem(44);
+    border-radius: 999px;
+    border: 1px solid rgba(2, 6, 23, 0.14);
+    background: rgba(255, 255, 255, 0.95);
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .bas__icon {
+    position: relative;
+    width: rem(14);
+    height: rem(14);
+    display: block;
+  }
+  .bas__icon--pause::before,
+  .bas__icon--pause::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: $color-primary;
+    border-radius: 2px;
+  }
+  .bas__icon--pause::before {
+    left: 3px;
+  }
+  .bas__icon--pause::after {
+    right: 3px;
+  }
+  .bas__icon--play {
+    background: $color-primary;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+  }
+}

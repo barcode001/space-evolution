@@ -1,0 +1,64 @@
+@use "sass:map";
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+.cta {
+  background: $color-primary;
+  color: $color-text-inverse;
+  text-align: center;
+  padding: map.get($spacing, xl) 0;
+
+  &__wrap {
+    display: grid;
+    gap: map.get($spacing, md);
+    justify-items: center;
+  }
+
+  &__title {
+    font-size: clamp(rem(26), 2vw + 1rem, rem(40));
+    font-weight: $font-weight-bold;
+    margin: 0;
+  }
+
+  &__lead {
+    font-size: rem(18);
+    max-width: 48ch;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(16);
+    margin-top: map.get($spacing, md);
+  }
+
+  .btn {
+    font-size: rem(18);
+    font-weight: 600;
+    padding: rem(12) rem(24);
+    border-radius: $radius-pill;
+    display: inline-flex;
+    align-items: center;
+    gap: rem(8);
+  }
+
+  .btn--inverse {
+    background: $color-text-inverse;
+    color: $color-primary;
+    &:hover {
+      background: $color-text-inverse;
+    }
+  }
+
+  .btn--ghost {
+    background: transparent;
+    border: 2px solid $color-text-inverse;
+    color: $color-text-inverse;
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+}

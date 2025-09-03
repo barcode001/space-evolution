@@ -22,11 +22,11 @@
     gap: 1.5rem;
 
     a {
-      color: #ccc;
+      color: $color-primary;
       text-decoration: none;
 
       &:hover {
-        color: white;
+        color: $color-accent-600;
       }
     }
   }

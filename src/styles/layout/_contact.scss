@@ -1,0 +1,120 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+.contact {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  &__wrap {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: rem(28);
+    align-items: start;
+  }
+
+  &__title {
+    font-size: clamp(rem(24), 2vw + 1rem, rem(36));
+  }
+  &__lead {
+    margin: rem(6) 0 rem(14);
+    color: rgba($color-text, 0.9);
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 rem(16);
+    li {
+      margin-bottom: rem(8);
+    }
+    span {
+      color: rgba($color-text, 0.7);
+      margin-right: 0.35rem;
+    }
+  }
+
+  &__link {
+    color: $color-primary;
+    text-decoration: none;
+  }
+  &__link--call {
+    font-weight: 700;
+  }
+
+  &__ctaRow {
+    display: flex;
+    gap: rem(12);
+    flex-wrap: wrap;
+    margin: rem(12) 0 rem(18);
+  }
+
+  .card {
+    padding: rem(18);
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    box-shadow: $shadow-sm;
+  }
+
+  .field {
+    display: grid;
+    gap: 0.4rem;
+    margin-bottom: rem(12);
+  }
+  .fieldGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(12);
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    border-radius: $radius-md;
+    border: 1px solid $color-border;
+    background: #fff;
+    color: $color-text;
+    &:focus {
+      outline: 2px solid $color-primary-600;
+      border-color: $color-primary-600;
+    }
+  }
+
+  &__status {
+    margin: rem(6) 0;
+    font-weight: 600;
+  }
+  &__status--ok {
+    color: #0a7a34;
+  }
+  &__status--error {
+    color: #b42222;
+  }
+
+  &__safe {
+    font-size: 0.85rem;
+    color: rgba($color-text, 0.7);
+    margin-top: rem(10);
+  }
+
+  &__map {
+    width: 100%;
+    height: 320px;
+    border: 0;
+    border-radius: $border-radius;
+    box-shadow: $shadow-sm;
+  }
+
+  @include down(md) {
+    &__wrap {
+      grid-template-columns: 1fr;
+    }
+    .fieldGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

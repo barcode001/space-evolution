@@ -1,0 +1,87 @@
+@use "sass:map";
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+
+.about {
+  &__wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: map.get($spacing, lg);
+    align-items: center;
+    margin: rem(10);
+    @include up(xxl) {
+      width: 1440px;
+      margin: 0 auto;
+    }
+  }
+
+  &__media {
+    margin: 0;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    background: $color-border;
+    aspect-ratio: 4 / 3;
+
+    .about__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: map.get($spacing, md);
+  }
+
+  &__title {
+    font-size: clamp(rem(24), 2vw + 1rem, rem(36));
+    line-height: 1.1;
+    color: $color-text;
+  }
+
+  &__lead {
+    font-size: rem(18);
+    color: rgba($color-text, 0.9);
+  }
+
+  &__bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: rem(10);
+  }
+
+  &__bullet {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(10);
+    font-weight: 600;
+    color: $color-text;
+
+    svg {
+      width: rem(22);
+      height: rem(22);
+      color: $color-primary;
+      flex: 0 0 auto;
+    }
+  }
+
+  &__ctaRow {
+    display: flex;
+    gap: rem(12);
+    flex-wrap: wrap;
+  }
+
+  // Stack on mobile
+  @include down(md) {
+    &__wrap {
+      grid-template-columns: 1fr;
+      gap: map.get($spacing, md);
+    }
+  }
+}

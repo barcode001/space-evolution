@@ -7,10 +7,10 @@
 
 // Base
 .nav {
-  position: a;
-  background: $color-background;
-  color: $color-text;
-  box-shadow: $box-shadow;
+  position: relative;
+  background: $color-primary;
+  color: $color-text-inverse;
+  box-shadow: $shadow-sm;
 
   &__bar {
     display: grid;
@@ -42,13 +42,12 @@
   // Desktop links
   &__links {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     gap: rem(24);
     list-style: none;
     margin: 0;
     padding: 0;
 
-    // nested rule LAST to avoid mixed-decls warning
     @include down(md) {
       // ≤ 768px
       display: none; // hidden on tablet/phone
@@ -66,6 +65,9 @@
     padding: rem(8) rem(6);
     border-radius: rem(6);
     transition: transform 0.15s ease, background-color 0.15s ease;
+    @include down(md) {
+      color: $color-primary !important;
+    }
 
     &:hover,
     &:focus-visible {
@@ -74,7 +76,7 @@
     }
 
     &.is-active {
-      color: $color-primary;
+      color: $color-primary-600;
 
       &::after {
         content: "";
@@ -83,7 +85,7 @@
         right: 0;
         bottom: -2px;
         height: 2px;
-        background: currentColor;
+        background: $color-accent;
         border-radius: 2px;
       }
     }
@@ -100,7 +102,7 @@
     }
   }
 
-  // Burger (single source; removed duplicate root .nav__burger)
+  // Burger (single source)
   &__burger {
     // base declarations FIRST
     display: none; // hidden by default (desktop-first)
@@ -113,7 +115,6 @@
     border-radius: rem(10);
 
     // layout inside the button
-    display: none; // (kept for clarity; overridden below)
     justify-self: end;
     flex-direction: column;
     justify-content: center;
@@ -128,7 +129,7 @@
       display: block;
       width: 22px; // fixed width for bars
       height: 2px;
-      background: $color-text;
+      background: $color-primary;
       border-radius: 1px;
 
       &:not(:last-child) {
@@ -140,7 +141,7 @@
     @include down(md) {
       // show on md and below
       display: inline-flex;
-      margin-right: -30px; // if you want that nudge
+      margin-right: -20px; // if you want that nudge
     }
   }
 
@@ -167,8 +168,7 @@
     right: 0;
     bottom: 0;
     width: min(80vw, 340px);
-
-    background: #fff;
+    background: $color-surface;
     box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
     transform: translateX(100%);
     transition: transform 0.2s ease;
@@ -180,12 +180,9 @@
       transform: translateX(0);
     }
 
-    // keep mobile-only hint but do nothing here
     @include down(md) {
       /* mobile only */
     }
-
-    // hide drawer UI on desktop-up
     @include up(md) {
       display: none;
     }
@@ -193,7 +190,6 @@
 
   &__drawerInner {
     max-width: 20%;
-    // margin: 0 auto;
     margin-left: rem(20);
     padding: rem(20) 0;
     display: flex;
@@ -247,5 +243,18 @@
       outline: 2px solid $color-primary;
       outline-offset: 2px;
     }
+  }
+}
+
+.nav {
+  &__cta {
+    margin-left: rem(16);
+    font-size: rem(14);
+    font-weight: $font-weight-medium;
+    padding: 0.6rem 1rem;
+    white-space: nowrap;
+  }
+  .btn {
+    margin: 0 auto;
   }
 }

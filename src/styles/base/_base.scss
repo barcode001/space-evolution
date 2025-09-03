@@ -1,0 +1,91 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+/* Page chrome */
+body {
+  background: $color-bg;
+  color: $color-text;
+  font-family: $font-family;
+  font-weight: $font-weight-regular;
+}
+
+/* Cards / panels */
+.card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $border-radius;
+  box-shadow: $shadow-sm;
+}
+
+/* Links */
+a {
+  color: $color-primary-600;
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.1rem;
+  border-radius: $radius-pill;
+  border: 1px solid transparent;
+  font-weight: $font-weight-medium;
+  transition: transform 0.08s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.btn--primary {
+  color: $color-text-inverse;
+  background: $color-primary;
+  box-shadow: $shadow-sm;
+
+  &:hover {
+    background: $color-primary-600;
+    box-shadow: $shadow-md;
+  }
+}
+
+.btn--accent {
+  color: #1a1a1a;
+  background: $color-accent;
+  &:hover {
+    background: $color-accent-600;
+  }
+}
+
+.btn--ghost {
+  color: $color-primary;
+  background: transparent;
+  border-color: rgba(15, 23, 42, 0.18);
+  &:hover {
+    background: rgba(15, 23, 42, 0.06);
+  }
+}
+
+/* Navbar / Footer (dark theme surfaces) */
+.nav,
+.footer {
+  background: $color-text-inverse;
+  color: $color-primary;
+}
+
+.footer a,
+.nav a {
+  color: $color-primary;
+  opacity: 0.9;
+  &:hover {
+    opacity: 1;
+  }
+}

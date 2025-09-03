@@ -7,6 +7,13 @@
 @use "./layout/components";
 @use "./layout/services";
 @use "./layout/hero";
+@use "./layout/before-after-slider";
+@use "./layout/services-overview";
+@use "./layout/about-us";
+@use "./layout/gallery";
+@use "./layout/testimonials";
+@use "./layout/call-to-action";
+@use "./layout/contact";
 
 @use "./base/base";
 @use "./base/reset";

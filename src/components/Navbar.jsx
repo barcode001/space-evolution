@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import clientInfo from "../config/clientInfo";
+import { FiPhoneCall } from "react-icons/fi"; // phone icon
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -68,6 +70,13 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        {/* Call Now Button */}
+        <a
+          href={`tel:${clientInfo.contact.phone}`}
+          className="btn btn--accent nav__cta"
+        >
+          <FiPhoneCall size={18} /> Call Now
+        </a>
 
         {/* Mobile hamburger */}
         <button
