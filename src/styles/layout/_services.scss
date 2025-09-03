@@ -1,0 +1,8 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.service-card {
+  background: red;
+  margin-top: 100px;
+}

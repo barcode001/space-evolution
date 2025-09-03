@@ -1,0 +1,75 @@
+@use "sass:map";
+
+// ---- Breakpoints (single source of truth)
+$breakpoints: (
+  xs: 480px,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px,
+);
+
+// ---- Core (flexible)
+/// respond($bp [, $type])
+/// $type: max (default) | min
+@mixin respond($bp, $type: max) {
+  $size: map.get($breakpoints, $bp);
+
+  @if $size == null {
+    @warn "Breakpoint `#{$bp}` not found in $breakpoints.";
+  } @else if $type == max {
+    @media (max-width: $size) {
+      @content;
+    }
+  } @else if $type == min {
+    @media (min-width: $size) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown type `#{$type}`. Use 'max' or 'min'.";
+  }
+}
+
+/// respond-between($from, $to) → min: $from … max: $to
+@mixin respond-between($from, $to) {
+  $min: map.get($breakpoints, $from);
+  $max: map.get($breakpoints, $to);
+
+  @if $min == null or $max == null {
+    @warn "One of the breakpoints (`#{$from}`, `#{$to}`) was not found.";
+  } @else {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+}
+
+// ---- Aliases (readable, for daily use)
+/// ≥ $bp  (desktop-first)
+@mixin up($bp) {
+  @include respond($bp, min) {
+    @content;
+  }
+}
+
+/// ≤ $bp  (mobile-first tweak)
+@mixin down($bp) {
+  @include respond($bp, max) {
+    @content;
+  }
+}
+
+// .header {
+//   font-size: rem(20);              // base = desktop
+//   @include down(md) { font-size: rem(16); }  // ≤ 768px
+//   @include down(sm) { font-size: rem(14); }  // ≤ 640px
+// }
+
+// .hero__title {
+//   @include up(xl) { font-size: rem(36); }    // ≥ 1280px
+// }
+
+// .tablet-only {
+//   @include respond-between(md, lg) { display: grid; } // 768–1024px
+// }

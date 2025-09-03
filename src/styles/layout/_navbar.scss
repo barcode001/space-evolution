@@ -1,0 +1,251 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+@use "sass:map";
+@use "sass:math";
+
+// Base
+.nav {
+  position: a;
+  background: $color-background;
+  color: $color-text;
+  box-shadow: $box-shadow;
+
+  &__bar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: rem(16);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: rem(12) rem(20);
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+
+    &Text {
+      font-weight: 700;
+      font-size: rem(20);
+      letter-spacing: 0.2px;
+    }
+
+    &--drawer {
+      padding: rem(8) 0;
+    }
+  }
+
+  // Desktop links
+  &__links {
+    display: flex;
+    justify-content: end;
+    gap: rem(24);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    // nested rule LAST to avoid mixed-decls warning
+    @include down(md) {
+      // ≤ 768px
+      display: none; // hidden on tablet/phone
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: rem(6);
+    text-decoration: none;
+    color: $color-text;
+    font-weight: 500;
+    padding: rem(8) rem(6);
+    border-radius: rem(6);
+    transition: transform 0.15s ease, background-color 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(0, 0, 0, 0.04);
+      outline: none;
+    }
+
+    &.is-active {
+      color: $color-primary;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 2px;
+        background: currentColor;
+        border-radius: 2px;
+      }
+    }
+
+    &--drawer {
+      display: block;
+      width: 100%;
+      padding: rem(12) 0;
+      font-size: rem(18);
+
+      &.is-active {
+        color: $color-primary;
+      }
+    }
+  }
+
+  // Burger (single source; removed duplicate root .nav__burger)
+  &__burger {
+    // base declarations FIRST
+    display: none; // hidden by default (desktop-first)
+    width: rem(44);
+    height: rem(44);
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    border-radius: rem(10);
+
+    // layout inside the button
+    display: none; // (kept for clarity; overridden below)
+    justify-self: end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:focus-visible {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
+
+    span {
+      display: block;
+      width: 22px; // fixed width for bars
+      height: 2px;
+      background: $color-text;
+      border-radius: 1px;
+
+      &:not(:last-child) {
+        margin-bottom: 6px;
+      }
+    }
+
+    // nested media includes LAST
+    @include down(md) {
+      // show on md and below
+      display: inline-flex;
+      margin-right: -30px; // if you want that nudge
+    }
+  }
+
+  // Backdrop
+  &__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.18s ease, visibility 0.18s ease;
+    z-index: 40;
+
+    &.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // Drawer
+  &__drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(80vw, 340px);
+
+    background: #fff;
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.2s ease;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+
+    &.is-open {
+      transform: translateX(0);
+    }
+
+    // keep mobile-only hint but do nothing here
+    @include down(md) {
+      /* mobile only */
+    }
+
+    // hide drawer UI on desktop-up
+    @include up(md) {
+      display: none;
+    }
+  }
+
+  &__drawerInner {
+    max-width: 20%;
+    // margin: 0 auto;
+    margin-left: rem(20);
+    padding: rem(20) 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(8);
+  }
+
+  &__drawerLinks {
+    list-style: none;
+    margin: rem(8) 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(6);
+  }
+}
+
+.nav {
+  &__close {
+    position: absolute;
+    top: rem(20);
+    right: rem(20);
+    width: rem(36);
+    height: rem(36);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    z-index: 60; // above drawer links
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      position: absolute;
+      width: 70%;
+      height: 2px;
+      background: $color-text;
+      border-radius: 1px;
+      transition: transform 0.2s ease;
+
+      &:first-child {
+        transform: rotate(45deg);
+      }
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
+  }
+}
