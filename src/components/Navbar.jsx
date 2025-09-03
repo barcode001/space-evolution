@@ -50,7 +50,7 @@ export default function Navbar() {
       <div className="nav__bar">
         <Link to="/" className="nav__brand" aria-label="Go to homepage">
           {/* Replace with your logo/SVG */}
-          <span className="nav__brandText">ClientName</span>
+          <span className="nav__brandText">Space Evolution</span>
         </Link>
 
         {/* Desktop links */}
