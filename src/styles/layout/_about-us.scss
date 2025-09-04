@@ -84,4 +84,10 @@
       gap: map.get($spacing, md);
     }
   }
+
+  .btn--primary {
+    &:hover {
+      background: $color-text-inverse;
+    }
+  }
 }

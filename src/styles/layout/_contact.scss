@@ -117,4 +117,10 @@
       grid-template-columns: 1fr;
     }
   }
+
+  a {
+    &:hover {
+      background: $color-text-inverse;
+    }
+  }
 }

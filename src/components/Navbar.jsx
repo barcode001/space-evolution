@@ -1,24 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link"; // ✅
 import clientInfo from "../config/clientInfo";
-import { FiPhoneCall } from "react-icons/fi"; // phone icon
+import { FiPhoneCall } from "react-icons/fi";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const firstFocusable = useRef(null);
   const lastFocusable = useRef(null);
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     document.documentElement.style.overflow = open ? "hidden" : "";
     return () => (document.documentElement.style.overflow = "");
   }, [open]);
 
-  // Close on ESC
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") setOpen(false);
-      // basic focus trap
       if (open && e.key === "Tab") {
         const f = firstFocusable.current;
         const l = lastFocusable.current;
@@ -39,17 +37,17 @@ export default function Navbar() {
   const close = () => setOpen(false);
 
   const navItems = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/services", label: "Services" },
-    { to: "/contact", label: "Contact" },
+    { to: "#about", label: "About" },
+    { to: "#services", label: "Services" },
+    { to: "#gallery", label: "Gallery" },
+    { to: "#testimonials", label: "Testimonials" },
+    { to: "#contact", label: "Contact" },
   ];
 
   return (
     <nav className="nav">
       <div className="nav__bar">
         <Link to="/" className="nav__brand" aria-label="Go to homepage">
-          {/* Replace with your logo/SVG */}
           <span className="nav__brandText">Space Evolution</span>
         </Link>
 
@@ -57,19 +55,18 @@ export default function Navbar() {
         <ul className="nav__links" role="menubar" aria-label="Primary">
           {navItems.map((item) => (
             <li key={item.to} role="none">
-              <NavLink
-                role="menuitem"
+              <HashLink
+                smooth
                 to={item.to}
-                className={({ isActive }) =>
-                  "nav__link" + (isActive ? " is-active" : "")
-                }
-                end={item.to === "/"}
+                className="nav__link"
+                onClick={close}
               >
                 {item.label}
-              </NavLink>
+              </HashLink>
             </li>
           ))}
         </ul>
+
         {/* Call Now Button */}
         <a
           href={`tel:${clientInfo.contact.phone}`}
@@ -111,33 +108,30 @@ export default function Navbar() {
           <span></span>
         </button>
         <div className="nav__drawerInner">
-          <Link
-            to="/"
+          <HashLink
+            smooth
+            to="#hero"
             className="nav__brand nav__brand--drawer"
             onClick={close}
             ref={firstFocusable}
           >
-            <span className="nav__brandText">ClientName</span>
-          </Link>
+            <span className="nav__brandText">Space Evolution</span>
+          </HashLink>
 
           <ul className="nav__drawerLinks" role="menu" aria-label="Mobile">
             {navItems.map((item, idx) => {
               const isLast = idx === navItems.length - 1;
               return (
                 <li key={item.to} role="none">
-                  <NavLink
-                    role="menuitem"
+                  <HashLink
+                    smooth
                     to={item.to}
-                    className={({ isActive }) =>
-                      "nav__link nav__link--drawer" +
-                      (isActive ? " is-active" : "")
-                    }
+                    className="nav__link nav__link--drawer"
                     onClick={close}
                     ref={isLast ? lastFocusable : null}
-                    end={item.to === "/"}
                   >
                     {item.label}
-                  </NavLink>
+                  </HashLink>
                 </li>
               );
             })}

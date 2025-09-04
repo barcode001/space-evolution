@@ -1,8 +1,5 @@
-import { Link } from "react-router-dom";
-import React from "react";
+import { HashLink } from "react-router-hash-link";
 import clientInfo from "../config/clientInfo";
-
-// import icons from react-icons
 import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
@@ -20,11 +17,20 @@ export default function Footer() {
           </a>
         </p>
 
+        {/* Footer nav links */}
         <div className="footer-links">
-          <Link to="/">Home</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
+          <HashLink smooth to="#hero">
+            Home
+          </HashLink>
+          <HashLink smooth to="#services">
+            Services
+          </HashLink>
+          <HashLink smooth to="#about">
+            About
+          </HashLink>
+          <HashLink smooth to="#contact">
+            Contact
+          </HashLink>
         </div>
 
         {/* Social icons */}
