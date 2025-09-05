@@ -3,7 +3,7 @@
 @use "../abstracts/mixins" as *;
 
 .services {
-  max-width: 1200px;
+  max-width: 1024px;
   margin: 0 auto;
   padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
 
@@ -119,4 +119,64 @@
       transform: translateY(1px);
     }
   }
+}
+
+/* Services list links */
+.services {
+  .services__bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem; // space between bullets
+  }
+
+  .services__bullet {
+    display: flex;
+    align-items: center;
+  }
+
+  .services__bulletLink {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    line-height: 1.3;
+    text-decoration: none;
+    cursor: pointer;
+
+    /* color that looks like a link, but matches your theme */
+    color: $color-primary; // from your variables
+    font-weight: 600;
+
+    /* underline-on-hover and focus ring for accessibility */
+    &:hover {
+      text-decoration: underline;
+    }
+    &:focus-visible {
+      outline: 2px solid $color-accent;
+      outline-offset: 2px;
+      border-radius: 4px;
+      text-decoration: underline;
+    }
+
+    /* small chevron so it reads as a link */
+    &::after {
+      content: "›";
+      font-size: 0.9em;
+      transform: translateY(1px);
+      transition: transform 120ms ease;
+      opacity: 0.85;
+    }
+    &:hover::after {
+      transform: translate(2px, 1px);
+    }
+  }
+}
+
+/* Optional: make bullets themselves have a dot */
+.services .services__bullet::before {
+  content: "•";
+  margin-right: 0.5rem;
+  color: rgba($color-text, 0.5);
 }

@@ -1,8 +1,241 @@
-@use "../abstracts/functions" as *;
 @use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
 @use "../abstracts/mixins" as *;
+@use "sass:map";
 
-.service-card {
-  background: red;
-  margin-top: 100px;
+.service {
+  display: grid;
+  gap: map.get($spacing, lg);
+  padding: map.get($spacing, lg) map.get($spacing, md);
+
+  &__title {
+    font-size: clamp(rem(28), 2vw + 1rem, rem(40));
+    font-weight: 700;
+    color: $color-text;
+    text-align: center;
+    margin-bottom: map.get($spacing, md);
+  }
+
+  &__media {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__lead {
+    font-size: rem(18);
+    line-height: 1.6;
+    color: rgba($color-text, 0.9);
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  &__subtitle {
+    font-size: rem(22);
+    font-weight: 600;
+    margin-top: map.get($spacing, lg);
+    margin-bottom: map.get($spacing, sm);
+    color: $color-primary;
+    text-align: center;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: grid;
+    gap: rem(10);
+    max-width: 600px;
+    align-items: center;
+
+    li {
+      position: relative;
+      padding-left: rem(24);
+      font-size: rem(16);
+      color: $color-text;
+
+      &::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: $color-accent;
+        font-size: rem(16);
+        line-height: 1.4;
+      }
+    }
+  }
+
+  &__cta {
+    text-align: center;
+    margin-top: map.get($spacing, lg);
+
+    .btn {
+      font-size: rem(16);
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: $border-radius;
+    }
+  }
+
+  &__steps {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  @include down(md) {
+    padding: map.get($spacing, md);
+
+    &__lead {
+      font-size: rem(16);
+    }
+
+    &__list {
+      max-width: 100%;
+    }
+  }
+  .area {
+    text-align: center;
+  }
+  .service__gallery {
+    margin: 0 auto;
+  }
+}
+
+/* Wrap your FAQs with .service__faqs (or drop into .service directly) */
+.service {
+  &__faqs {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    gap: map.get($spacing, md);
+  }
+
+  /* Each item */
+  details {
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    background: $color-surface;
+    box-shadow: $shadow-sm;
+    overflow: clip; /* prevents border bleed during animation */
+
+    /* Subtle elevate when open */
+    &[open] {
+      box-shadow: $shadow-md;
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  /* Clickable header */
+  summary {
+    cursor: pointer;
+    list-style: none; /* Firefox */
+    user-select: none;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: rem(10);
+    padding: rem(14) rem(16);
+    font-weight: 600;
+    color: $color-text;
+    outline: none;
+
+    /* Remove default marker (Chrome/Safari) */
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    /* Hover/Focus */
+    &:hover {
+      background: rgba(0, 0, 0, 0.03);
+    }
+    &:focus-visible {
+      outline: 2px solid $color-accent;
+      outline-offset: 2px;
+      border-radius: $border-radius;
+    }
+
+    /* Chevron icon (CSS-only) */
+    &::after {
+      content: "";
+      width: rem(18);
+      height: rem(18);
+      border-right: 2px solid $color-primary;
+      border-bottom: 2px solid $color-primary;
+      transform: rotate(-45deg); /* points right (›) */
+      transition: transform 0.18s ease;
+      justify-self: end;
+    }
+  }
+
+  /* Rotate chevron when open (points down) */
+  details[open] > summary::after {
+    transform: rotate(45deg); /* points down (⌄) */
+  }
+
+  /* The panel content (animates open/close) */
+  .faq__panel {
+    /* animation trick: animate max-height + opacity */
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.28s ease, opacity 0.22s ease, visibility 0.22s ease;
+    padding: 0 rem(16); /* horizontal padding matches summary */
+
+    p,
+    li {
+      color: rgba($color-text, 0.9);
+      line-height: 1.6;
+      font-size: rem(16);
+    }
+
+    > *:first-child {
+      margin-top: 0;
+    }
+    > *:last-child {
+      margin-bottom: 0;
+    }
+
+    /* spacing inside when open */
+    &__inner {
+      padding: 0 0 rem(14);
+    }
+  }
+
+  /* When <details> is open, reveal panel */
+  details[open] .faq__panel {
+    max-height: 300px; /* large enough for 1–3 paragraphs */
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* If you expect longer answers, bump the max-height for safety */
+  @media (min-width: 768px) {
+    details[open] .faq__panel {
+      max-height: 500px;
+    }
+  }
+
+  /* Dense layout on small screens */
+  @include down(md) {
+    &__faqs {
+      gap: map.get($spacing, sm);
+    }
+    summary {
+      padding: rem(12) rem(14);
+    }
+    .faq__panel &__inner {
+      padding-bottom: rem(12);
+    }
+  }
 }

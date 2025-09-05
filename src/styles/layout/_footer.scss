@@ -31,8 +31,16 @@
     }
   }
 
-  .credits {
+  .design-credit {
     margin: 0;
+    a {
+      color: $color-secondary;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $color-text-muted;
+      }
+    }
   }
 }
 
@@ -41,13 +49,4 @@
   display: flex;
   gap: rem(12);
   justify-content: center;
-
-  a {
-    color: $color-text;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: $color-primary;
-    }
-  }
 }

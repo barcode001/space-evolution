@@ -5,7 +5,7 @@ import AboutUs from "pages/AboutUs";
 import Gallery from "components/Gallery";
 import Testimonials from "./Testimonials";
 import CallToAction from "./CallToAction";
-import Contact from "./Contact";
+// import Contact from "./Contact";
 
 function Home() {
   return (
@@ -29,10 +29,10 @@ function Home() {
         <Testimonials />
       </section>
       <CallToAction />
-      <section id="contact">
+      {/* <section id="contact">
         {" "}
         <Contact />{" "}
-      </section>
+      </section> */}
     </>
   );
 }

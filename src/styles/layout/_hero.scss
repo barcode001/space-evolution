@@ -6,6 +6,8 @@
   position: relative;
   isolation: isolate; // keep overlay above slider but below nav
   min-height: clamp(420px, 60vh, 760px);
+  max-width: 1624px;
+  margin: 0 auto;
 
   // the slider should fill the section
   .bas {

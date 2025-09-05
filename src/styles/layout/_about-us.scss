@@ -10,8 +10,9 @@
     gap: map.get($spacing, lg);
     align-items: center;
     margin: rem(10);
+
     @include up(xxl) {
-      width: 1440px;
+      max-width: 1024px;
       margin: 0 auto;
     }
   }

@@ -8,6 +8,7 @@
   text-align: center;
   max-width: 1000px;
   margin: 0 auto;
+  margin-top: -40px;
 
   &__title {
     font-size: clamp(rem(28), 2vw + 1rem, rem(40));

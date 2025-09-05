@@ -258,3 +258,173 @@
     margin: 0 auto;
   }
 }
+
+.nav {
+  // container for items with submenu
+  .nav__item--hasSub {
+    position: relative;
+
+    // open on hover for pointer devices (optional sugar)
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        & > .nav__submenu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    &.is-open > .nav__submenu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  .nav__link--button {
+    appearance: none;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    padding: rem(8) rem(6);
+    display: inline-flex;
+    align-items: center;
+    gap: rem(6);
+    cursor: pointer;
+    border-radius: rem(6);
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(0, 0, 0, 0.06);
+      outline: none;
+    }
+  }
+
+  .nav__chev {
+    font-size: 0.9em;
+    opacity: 0.8;
+  }
+
+  .nav__submenu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: rem(220);
+    padding: rem(8);
+    margin: 0;
+    list-style: none;
+    background: $color-surface;
+    color: $color-text;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    box-shadow: $shadow-md;
+    z-index: 60;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+
+    // don’t show dropdown on mobile; you already have drawer
+    @include down(md) {
+      display: none;
+    }
+  }
+
+  .nav__submenuLink {
+    display: block;
+    padding: rem(8) rem(10);
+    border-radius: rem(6);
+    text-decoration: none;
+    color: $color-text;
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      outline: none;
+    }
+  }
+}
+
+//mobile drop menu
+/* Make the drawer itself scroll; body stays locked */
+.nav__drawer {
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  font-weight: 600;
+}
+
+/* Mobile collapsible group container */
+.nav__drawerGroup {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: rem(8);
+
+  &.is-open .nav__drawerSub {
+    max-height: 1000px; // big enough to reveal all
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* The toggle row */
+.nav__drawerToggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: rem(10) 0;
+  background: transparent;
+  border: none;
+  color: $color-primary; // readable in drawer
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  border-radius: rem(6);
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+/* Collapsible list (hidden by default) */
+.nav__drawerSub {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 rem(8);
+  width: 200px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.24s ease, opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Links inside the collapsible */
+.nav__drawerLink {
+  display: block;
+  padding: rem(8) 0;
+  text-decoration: none;
+  color: $color-primary;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+    outline: none;
+  }
+}
+
+/* Stick the nav to the top on mobile */
+@include down(md) {
+  .nav {
+    position: sticky; // <— was relative
+    top: 0;
+    z-index: 1000; // above drawer/backdrop
+    /* iOS notch friendliness */
+    padding-top: env(safe-area-inset-top);
+  }
+}
