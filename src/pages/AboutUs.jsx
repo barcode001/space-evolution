@@ -46,9 +46,9 @@ export default function AboutUs() {
             <a className="btn btn--primary" href="tel:3464791647">
               Call for a Free Estimate
             </a>
-            <a className="btn btn--ghost" href="/about">
+            {/* <a className="btn btn--ghost" href="/about">
               Learn more
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
