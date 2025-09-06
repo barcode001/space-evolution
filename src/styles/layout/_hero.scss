@@ -63,7 +63,7 @@
     color: $color-surface;
     font-size: clamp(1rem, 1.2vw + 0.6rem, 1.25rem);
     max-width: 48ch;
-    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.718);
   }
 
   &__ctas {
@@ -84,5 +84,53 @@
     &__ctas {
       gap: rem(10);
     }
+  }
+}
+
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $color-text-inverse;
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    max-width: 800px;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 2rem;
+    color: rgba($color-text-inverse, 0.9);
+    margin: 0 auto;
+  }
+
+  &__ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.15)
+    );
+    z-index: 1;
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import clientInfo from "../config/clientInfo";
 import { LuCheck } from "react-icons/lu";
-import crew from "../assets/images/crew.jpg";
+import crew from "../assets/images/workers1.jpeg";
 // Optional: centralize contact/city in your clientInfo
 // import clientInfo from "config/clientInfo";
 

@@ -1,10 +1,18 @@
+// src/components/Hero.jsx
 import React from "react";
-import BeforeAfterSlider from "pages/BeforeAfterSlider";
 import clientInfo from "../config/clientInfo";
+import heroImg from "../assets/images/hero-image.jpg";
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section
+      className="hero"
+      style={{
+        backgroundImage: `url(${heroImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       {/* content overlay */}
       <div className="hero__content">
         <h1 className="hero__title">
@@ -28,16 +36,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* background slider */}
-      <BeforeAfterSlider
-        initial={50}
-        autoplay
-        min={0} // go all the way left
-        max={100} // go all the way right
-        speed={0.25}
-      />
-
-      {/* optional: dark gradient for text contrast */}
+      {/* gradient scrim for contrast */}
       <div className="hero__scrim" aria-hidden="true" />
     </section>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-
+import bathroom from "../assets/images/bathroom3.jpeg";
 export default function BathroomRemodeling() {
   const PHONE = "3464791647";
 
@@ -73,7 +73,7 @@ export default function BathroomRemodeling() {
       {/* Hero Image */}
       <div className="service__media">
         <img
-          src="/images/bathroom-remodel.jpg"
+          src={bathroom}
           alt="Modern bathroom remodel with custom tile shower and vanity"
           className="service__img"
           loading="eager"

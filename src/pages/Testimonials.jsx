@@ -33,7 +33,7 @@ const REVIEWS = [
   {
     author: "Daniel P.",
     rating: 5,
-    text: "They repaired drywall, repainted our home, and updated a bathroom—great craftsmanship, fair price.",
+    text: "They repaired drywall, repainted our home, and updated a bathroom great craftsmanship, fair price.",
     source: "Client",
     date: "2025-07-28",
   },
