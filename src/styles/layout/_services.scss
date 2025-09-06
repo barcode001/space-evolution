@@ -239,4 +239,10 @@
       padding-bottom: rem(12);
     }
   }
+  p {
+    text-align: center;
+    a {
+      color: $color-accent;
+    }
+  }
 }
