@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import utilities from "../assets/images/utilities.jpg";
 
 export default function UtilitiesHub() {
   const PHONE_DISPLAY = "346-479-1647";
@@ -48,7 +49,7 @@ export default function UtilitiesHub() {
         />
         <link
           rel="canonical"
-          href="https://www.yoursite.com/services/utilities"
+          href="https://www.spaceevolutionhouston.com/services/utilities"
         />
         <meta property="og:title" content="Utilities | Electrical & Plumbing" />
         <meta
@@ -70,7 +71,7 @@ export default function UtilitiesHub() {
         <div className="serviceHub__media">
           <img
             className="serviceHub__img"
-            src="/images/services/utilities-hero.jpg"
+            src={utilities}
             alt="Licensed electrician and plumber working safely on residential systems"
             loading="eager"
             width={1600}

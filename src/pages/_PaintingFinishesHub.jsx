@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import painting from "../assets/images/painting-finishes.png";
 
 export default function PaintingFinishesHub() {
   const PHONE_TEL = "3464791647";
@@ -17,7 +18,7 @@ export default function PaintingFinishesHub() {
         />
         <link
           rel="canonical"
-          href="https://www.yoursite.com/services/painting"
+          href="https://www.spaceevolutionhouston.com/services/painting"
         />
         <meta property="og:title" content="Painting & Finishes" />
         <meta
@@ -37,7 +38,7 @@ export default function PaintingFinishesHub() {
         <div className="serviceHub__media">
           <img
             className="serviceHub__img"
-            src="/images/services/painting-hero.jpg"
+            src={painting}
             alt="Freshly painted living room with smooth walls and crisp trim"
             loading="eager"
           />

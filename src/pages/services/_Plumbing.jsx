@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import plumbing from "../../assets/images/plumbing.jpg";
 
 export default function Plumbing() {
   const phone = "346-479-1647";
@@ -39,7 +40,7 @@ export default function Plumbing() {
         />
         <link
           rel="canonical"
-          href="https://www.yoursite.com/services/plumbing"
+          href="https://www.spaceevolutionhouston.com/services/plumbing"
         />
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>
@@ -48,7 +49,7 @@ export default function Plumbing() {
 
       <div className="service__media">
         <img
-          src="/images/plumbing-service.jpg"
+          src={plumbing}
           alt="Licensed plumber installing sink and faucet during a remodel"
           className="service__img"
           loading="eager"

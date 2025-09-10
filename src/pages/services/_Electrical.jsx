@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import eletrical from "../../assets/images/electrical-services.png";
 
 export default function Electrical() {
   const phone = "346-479-1647";
@@ -39,7 +40,7 @@ export default function Electrical() {
         />
         <link
           rel="canonical"
-          href="https://www.yoursite.com/services/electrical"
+          href="https://www.spaceevolutionhouston.com/services/electrical"
         />
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>
@@ -48,7 +49,7 @@ export default function Electrical() {
 
       <div className="service__media">
         <img
-          src="/images/electrical-service.jpg"
+          src={eletrical}
           alt="Electrician installing recessed lighting in a newly remodeled room"
           className="service__img"
           loading="eager"

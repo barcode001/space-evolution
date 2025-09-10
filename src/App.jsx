@@ -23,6 +23,7 @@ import Remodeling from "pages/_Remodeling";
 import PaintingFinishesHub from "pages/_PaintingFinishesHub";
 import OutdoorStructuralHub from "pages/_OutdoorStructuralHub";
 import UtilitiesHub from "pages/_UtilitiesHub";
+import Siding from "pages/services/Siding";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
           path="/services/fencing-driveways"
           element={<FencingDriveways />}
         />
+        <Route path="/services/siding" element={<Siding />} />
         <Route path="/services/closets" element={<Closets />} />
         <Route path="/services/remodeling" element={<Remodeling />} />
         <Route path="/services/outdoor" element={<OutdoorStructuralHub />} />

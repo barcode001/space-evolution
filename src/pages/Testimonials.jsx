@@ -60,7 +60,7 @@ export default function Testimonials() {
     "@type": "LocalBusiness",
     name: "Space Evolution",
     image: "/images/logo.png",
-    url: "https://www.yoursite.com/",
+    url: "https://www.spaceevolutionhouston.com/",
     telephone: "346-479-1647",
     address: {
       "@type": "PostalAddress",

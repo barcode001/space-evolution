@@ -39,7 +39,7 @@ export default function ExteriorPainting() {
         />
         <link
           rel="canonical"
-          href="https://www.yoursite.com/services/exterior-painting"
+          href="https://www.spaceevolutionhouston.com/services/exterior-painting"
         />
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>

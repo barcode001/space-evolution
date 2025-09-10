@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import closet from "../../assets/images/closet2.png";
 
 export default function Closets() {
   return (
@@ -15,7 +16,7 @@ export default function Closets() {
 
       <div className="service__media">
         <img
-          src="/images/closet-remodel.jpg"
+          src={closet}
           alt="Custom walk-in closet with shelves and storage"
           className="service__img"
         />

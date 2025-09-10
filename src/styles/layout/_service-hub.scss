@@ -1,3 +1,195 @@
+// @use "../abstracts/variables" as *;
+// @use "../abstracts/functions" as *;
+// @use "../abstracts/mixins" as *;
+// @use "sass:map";
+
+// .serviceHub {
+//   display: grid;
+//   gap: map.get($spacing, xl);
+//   max-width: 1024px;
+//   margin: 0 auto;
+
+//   &__head {
+//     display: grid;
+//     gap: map.get($spacing, md);
+//     text-align: center;
+//   }
+
+//   &__title {
+//     font-size: clamp(rem(28), 2vw + 1rem, rem(40));
+//     font-weight: 700;
+//     color: $color-primary; // sits on primary bg (see media wrapper)
+//   }
+
+//   &__lead {
+//     max-width: 800px;
+//     margin: 0 auto;
+//     color: rgba($color-primary, 0.95);
+//     font-size: rem(18);
+//     line-height: 1.6;
+//     padding: 10px;
+//   }
+
+//   /* Hero media with brand color backdrop */
+//   &__media {
+//     max-width: 1000px;
+//     margin: 0 auto;
+//     border-radius: $border-radius;
+//     overflow: hidden;
+//     box-shadow: $shadow-md;
+//     background: $color-primary;
+//     margin: 10px;
+//   }
+
+//   &__img {
+//     display: block;
+//     width: 100%;
+//     height: auto;
+//     mix-blend-mode: normal;
+//     opacity: 0.98;
+//   }
+
+//   &__content {
+//     max-width: 900px;
+//     margin: 0 auto;
+//     padding: 10px;
+//   }
+
+//   /* Child service grid */
+//   &__grid {
+//     padding: 10px;
+//     display: grid;
+//     gap: map.get($spacing, lg);
+//     grid-template-columns: repeat(4, minmax(0, 1fr));
+
+//     @include down(lg) {
+//       grid-template-columns: repeat(2, minmax(0, 1fr));
+//     }
+//     @include down(sm) {
+//       grid-template-columns: 1fr;
+//     }
+//   }
+//   .pfgrid {
+//     grid-template-columns: repeat(3, minmax(0, 1fr));
+
+//     @include down(lg) {
+//       grid-template-columns: repeat(1, minmax(0, 1fr));
+//     }
+//     @include down(sm) {
+//       grid-template-columns: 1fr;
+//     }
+//   }
+//   .osgrid {
+//     grid-template-columns: 1fr;
+//   }
+
+//   &__card {
+//     background: $color-surface;
+//     border: 1px solid $color-border;
+//     border-radius: $border-radius;
+//     padding: map.get($spacing, md);
+//     box-shadow: $shadow-sm;
+//     display: grid;
+//     gap: rem(10);
+//   }
+
+//   &__cardTitle {
+//     font-size: rem(18);
+//     font-weight: 700;
+//     color: $color-text;
+//     margin: 0;
+//   }
+
+//   &__cardText {
+//     color: rgba($color-text, 0.9);
+//     line-height: 1.6;
+//   }
+
+//   &__cta {
+//     color: $color-primary;
+//     font-weight: 600;
+//     text-decoration: none;
+
+//     &:hover,
+//     &:focus-visible {
+//       text-decoration: underline;
+//       outline: none;
+//     }
+//   }
+
+//   &__ctaRow {
+//     display: flex;
+//     gap: rem(12);
+//     justify-content: center;
+//     flex-wrap: wrap;
+
+//     .btn {
+//       padding: 0.75rem 1.4rem;
+//       font-weight: 600;
+//     }
+//   }
+
+//   /* FAQs */
+//   &__faqs {
+//     max-width: 900px;
+//     margin: 0 auto;
+//   }
+
+//   &__subtitle {
+//     text-align: center;
+//     color: $color-primary;
+//     font-size: rem(22);
+//     font-weight: 700;
+//     margin-bottom: map.get($spacing, sm);
+//   }
+
+//   details {
+//     border: 1px solid $color-border;
+//     border-radius: $border-radius;
+//     padding: rem(12) rem(14);
+//     background: $color-surface;
+//     box-shadow: $shadow-xs;
+//     transition: box-shadow 0.2s ease;
+//     margin-bottom: rem(10);
+
+//     &:hover {
+//       box-shadow: $shadow-sm;
+//     }
+
+//     summary {
+//       cursor: pointer;
+//       font-weight: 600;
+//       list-style: none;
+//       position: relative;
+//       padding-right: rem(18);
+
+//       &::-webkit-details-marker {
+//         display: none;
+//       }
+
+//       &::after {
+//         content: "▾";
+//         position: absolute;
+//         right: 0;
+//         top: 0;
+//         transform: rotate(0deg);
+//         transition: transform 0.2s ease;
+//         opacity: 0.8;
+//       }
+//     }
+
+//     &[open] summary::after {
+//       transform: rotate(180deg);
+//     }
+
+//     p {
+//       margin-top: rem(10);
+//       color: rgba($color-text, 0.9);
+//       line-height: 1.6;
+//     }
+//   }
+// }
+
 @use "../abstracts/variables" as *;
 @use "../abstracts/functions" as *;
 @use "../abstracts/mixins" as *;
@@ -18,7 +210,7 @@
   &__title {
     font-size: clamp(rem(28), 2vw + 1rem, rem(40));
     font-weight: 700;
-    color: $color-primary; // sits on primary bg (see media wrapper)
+    color: $color-primary;
   }
 
   &__lead {
@@ -27,24 +219,27 @@
     color: rgba($color-primary, 0.95);
     font-size: rem(18);
     line-height: 1.6;
-    padding: 10px;
+    padding: rem(10);
   }
 
   /* Hero media with brand color backdrop */
   &__media {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: rem(10) auto; /* single margin */
     border-radius: $border-radius;
     overflow: hidden;
     box-shadow: $shadow-md;
     background: $color-primary;
-    margin: 10px;
+
+    /* keep hero images at 16:9 without layout shift */
+    aspect-ratio: 16 / 9;
   }
 
   &__img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* fills aspect-ratio box */
     mix-blend-mode: normal;
     opacity: 0.98;
   }
@@ -52,12 +247,12 @@
   &__content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 10px;
+    padding: rem(10);
   }
 
   /* Child service grid */
   &__grid {
-    padding: 10px;
+    padding: rem(10);
     display: grid;
     gap: map.get($spacing, lg);
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -68,19 +263,18 @@
     @include down(sm) {
       grid-template-columns: 1fr;
     }
-  }
-  .pfgrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    @include down(lg) {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
+    /* variant layouts (scoped) */
+    &.pfgrid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      @include down(lg) {
+        grid-template-columns: 1fr;
+      }
     }
-    @include down(sm) {
+
+    &.osgrid {
       grid-template-columns: 1fr;
     }
-  }
-  .osgrid {
-    grid-template-columns: 1fr;
   }
 
   &__card {
@@ -91,6 +285,14 @@
     box-shadow: $shadow-sm;
     display: grid;
     gap: rem(10);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: $shadow-md;
+        transform: translateY(-1px);
+      }
+    }
   }
 
   &__cardTitle {
@@ -148,12 +350,14 @@
     border-radius: $border-radius;
     padding: rem(12) rem(14);
     background: $color-surface;
-    box-shadow: $shadow-xs;
+    box-shadow: $shadow-sm; /* fixed: was $shadow-xs */
     transition: box-shadow 0.2s ease;
     margin-bottom: rem(10);
 
-    &:hover {
-      box-shadow: $shadow-sm;
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: $shadow-md;
+      }
     }
 
     summary {

@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import outdoor from "../assets/images/outdoor.jpg";
 
 export default function OutdoorStructuralHub() {
   const PHONE_TEL = "3464791647";
@@ -18,7 +19,7 @@ export default function OutdoorStructuralHub() {
         />
         <link
           rel="canonical"
-          href="https://www.yoursite.com/services/outdoor"
+          href="https://www.spaceevolutionhouston.com/services/outdoor"
         />
         <meta property="og:title" content="Outdoor & Structural" />
         <meta
@@ -38,7 +39,7 @@ export default function OutdoorStructuralHub() {
         <div className="serviceHub__media">
           <img
             className="serviceHub__img"
-            src="/images/services/outdoor-hero.jpg"
+            src={outdoor}
             alt="Stamped concrete patio with wood fence and seating area"
             loading="eager"
           />

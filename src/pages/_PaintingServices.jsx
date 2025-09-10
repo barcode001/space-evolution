@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 export default function PaintingServices() {
-  const siteUrl = "https://spaceevolution.com"; // ← update to real domain
+  const siteUrl = "https://www.spaceevolutionhouston.com/"; // ← update to real domain
   const pageUrl = `${siteUrl}/services/painting`;
   const businessName = "Space Evolution";
   const phone = "346-479-1647";

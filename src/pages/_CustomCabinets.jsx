@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-
+import closet from "../assets/images/closet.png";
 export default function CustomCabinets() {
   return (
     <section className="service container section">
@@ -12,7 +12,7 @@ export default function CustomCabinets() {
         />
         <link
           rel="canonical"
-          href="https://www.yourdomain.com/services/custom-cabinets"
+          href="https://www.spaceevolutionhouston.com/services/custom-cabinets"
         />
         <meta
           property="og:title"
@@ -30,7 +30,7 @@ export default function CustomCabinets() {
       {/* Hero Image */}
       <div className="service__media">
         <img
-          src="/images/custom-cabinets.jpg"
+          src={closet}
           alt="Built-in custom cabinets and organized walk-in closet"
           className="service__img"
         />

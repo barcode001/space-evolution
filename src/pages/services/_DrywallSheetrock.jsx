@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import drywall from "../../assets/images/drywall-sheetrock1.png";
 
 export default function DrywallSheetrock() {
   const phone = "346-479-1647";
@@ -41,7 +42,7 @@ export default function DrywallSheetrock() {
         />
         <link
           rel="canonical"
-          href="https://www.yoursite.com/services/drywall-sheetrock"
+          href="https://www.spaceevolutionhouston.com/services/drywall-sheetrock"
         />
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>
@@ -50,7 +51,7 @@ export default function DrywallSheetrock() {
 
       <div className="service__media">
         <img
-          src="/images/drywall-repair.jpg"
+          src={drywall}
           alt="Drywall finishing and texture applied on interior walls"
           className="service__img"
           loading="eager"

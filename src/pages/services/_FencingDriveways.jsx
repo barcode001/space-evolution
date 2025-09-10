@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import fencing from "../../assets/images/fencing-driveways.png";
 
 export default function FencingDriveways() {
   const phone = "346-479-1647";
@@ -39,7 +40,7 @@ export default function FencingDriveways() {
         />
         <link
           rel="canonical"
-          href="https://www.yoursite.com/services/fencing-driveways"
+          href="https://www.spaceevolutionhouston.com/services/fencing-driveways"
         />
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>
@@ -48,7 +49,7 @@ export default function FencingDriveways() {
 
       <div className="service__media">
         <img
-          src="/images/fencing-driveways.jpg"
+          src={fencing}
           alt="New wood privacy fence and fresh concrete driveway at a home"
           className="service__img"
           loading="eager"

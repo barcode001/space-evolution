@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import kitchen from "../assets/images/kitchen001.png";
 
 export default function KitchenRemodeling() {
   return (
@@ -15,7 +16,7 @@ export default function KitchenRemodeling() {
         />
         <link
           rel="canonical"
-          href="https://spaceevolution.com/services/kitchen"
+          href="https://www.spaceevolutionhouston.com/services/kitchen"
         />
         {/* Open Graph for social sharing */}
         <meta
@@ -29,11 +30,11 @@ export default function KitchenRemodeling() {
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://spaceevolution.com/services/kitchen"
+          content="https://www.spaceevolutionhouston.com/services/kitchen"
         />
         <meta
           property="og:image"
-          content="https://spaceevolution.com/images/kitchen-remodel.jpg"
+          content="https://www.spaceevolutionhouston.com/images/kitchen-remodel.jpg"
         />
       </Helmet>
 
@@ -43,7 +44,7 @@ export default function KitchenRemodeling() {
         {/* Hero Image */}
         <div className="service__media">
           <img
-            src="/images/kitchen-remodel.jpg"
+            src={kitchen}
             alt="Modern kitchen remodel with custom cabinets and island"
             className="service__img"
           />

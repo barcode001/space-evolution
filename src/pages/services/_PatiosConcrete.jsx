@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import patio from "../../assets/images/patio002.png";
 
 export default function PatiosConcrete() {
   const phone = "346-479-1647";
@@ -39,7 +40,7 @@ export default function PatiosConcrete() {
         />
         <link
           rel="canonical"
-          href="https://www.yoursite.com/services/patios-concrete"
+          href="https://www.spaceevolutionhouston.com/services/patios-concrete"
         />
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>
@@ -48,7 +49,7 @@ export default function PatiosConcrete() {
 
       <div className="service__media">
         <img
-          src="/images/patios-concrete.jpg"
+          src={patio}
           alt="Stamped concrete patio with seating area and walkway"
           className="service__img"
           loading="eager"

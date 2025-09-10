@@ -1,196 +1,7 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import { Helmet } from "react-helmet-async";
-
-// export default function Remodeling() {
-//   const PHONE_DISPLAY = "346-479-1647";
-//   const PHONE_TEL = "3464791647";
-
-//   const faqSchema = {
-//     "@context": "https://schema.org",
-//     "@type": "FAQPage",
-//     mainEntity: [
-//       {
-//         "@type": "Question",
-//         name: "Do you help with layout and design?",
-//         acceptedAnswer: {
-//           "@type": "Answer",
-//           text: "Yes—space planning, cabinet layouts, fixture selections, and finish guides are included as part of our remodeling service.",
-//         },
-//       },
-//       {
-//         "@type": "Question",
-//         name: "Can you work in phases to match my budget?",
-//         acceptedAnswer: {
-//           "@type": "Answer",
-//           text: "Absolutely. We can split kitchens, baths, and storage projects into phases to minimize disruption and fit your budget.",
-//         },
-//       },
-//       {
-//         "@type": "Question",
-//         name: "Do you handle permits and inspections?",
-//         acceptedAnswer: {
-//           "@type": "Answer",
-//           text: "Yes. When required, we handle permits and coordinate inspections with your local jurisdiction.",
-//         },
-//       },
-//     ],
-//   };
-
-//   return (
-//     <section className="service container section">
-//       <Helmet>
-//         <title>Remodeling | Space Evolution</title>
-//         <meta
-//           name="description"
-//           content="Full-service home remodeling in Houston: kitchens, bathrooms, custom cabinets, and closets. Licensed & insured, clear timelines, and clean job sites."
-//         />
-//         <link
-//           rel="canonical"
-//           href="https://www.yoursite.com/services/remodeling"
-//         />
-//         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-//       </Helmet>
-
-//       <h1 className="service__title">Remodeling</h1>
-
-//       {/* Hero Image */}
-//       <div className="service__media">
-//         <img
-//           src="/images/remodeling-hero.jpg"
-//           alt="Remodeled Houston kitchen with island and custom cabinetry"
-//           className="service__img"
-//         />
-//       </div>
-
-//       <p className="service__lead">
-//         From concept to completion, we remodel kitchens, bathrooms, and storage
-//         spaces with durable materials and clean, professional workmanship.
-//         You’ll get an organized plan, a clear schedule, and daily updates—so the
-//         process is as stress-free as possible.
-//       </p>
-
-//       {/* Quick links to child services */}
-//       <h2 className="service__subtitle">Popular Remodeling Services</h2>
-//       <ul className="service__list">
-//         <li>
-//           <Link to="/services/kitchen-remodeling">Kitchen Remodeling</Link>
-//         </li>
-//         <li>
-//           <Link to="/services/bathroom-remodeling">Bathroom Remodeling</Link>
-//         </li>
-//         <li>
-//           <Link to="/services/custom-cabinets">Custom Cabinets</Link>
-//         </li>
-//         <li>
-//           <Link to="/services/closets">Closets & Built-Ins</Link>
-//         </li>
-//       </ul>
-
-//       {/* Trust */}
-//       <h2 className="service__subtitle">Why Choose Space Evolution</h2>
-//       <ul className="service__list">
-//         <li>Licensed & insured crew, clean job sites, daily communication.</li>
-//         <li>Upfront scope and pricing—no surprises.</li>
-//         <li>
-//           Skilled installers for cabinets, counters, tile, electrical &
-//           plumbing.
-//         </li>
-//         <li>1-year workmanship warranty; manufacturer warranties honored.</li>
-//       </ul>
-
-//       {/* Timelines */}
-//       <h2 className="service__subtitle">Typical Timelines</h2>
-//       <ul className="service__list">
-//         <li>Kitchen refresh (paint, hardware, backsplash): 1–2 weeks</li>
-//         <li>Full kitchen (cabinets, counters, flooring): 3–6 weeks</li>
-//         <li>Bathroom remodel: 2–4 weeks</li>
-//         <li>Custom built-ins / closets: 1–2 weeks</li>
-//       </ul>
-
-//       {/* Materials */}
-//       <h2 className="service__subtitle">Materials & Finishes</h2>
-//       <p className="service__lead">
-//         Shaker & slab cabinetry, soft-close hardware, quartz/granite/marble
-//         counters, porcelain & ceramic tile, durable LVP and engineered wood
-//         flooring, premium paints, LED lighting, and modern fixtures.
-//       </p>
-
-//       {/* Service Area */}
-//       <h2 className="service__subtitle">Service Area</h2>
-//       <p className="area">
-//         Houston, Katy, Sugar Land, Pasadena, The Woodlands, Pearland, Cypress,
-//         Spring, and nearby communities.
-//       </p>
-
-//       {/* Mini Gallery — swap with your real paths */}
-//       <div className="service__gallery">
-//         <img
-//           src="/images/kitchen-1.jpg"
-//           alt="Kitchen renovation with quartz island"
-//         />
-//         <img src="/images/bath-1.jpg" alt="Bathroom remodel with tile shower" />
-//         <img src="/images/cabinets-1.jpg" alt="Custom built-in media cabinet" />
-//       </div>
-
-//       {/* FAQs */}
-//       <h2 className="service__subtitle">Remodeling FAQs</h2>
-
-//       <div className="service__faqs">
-//         <details>
-//           <summary>Do you help with layout and design?</summary>
-//           <div className="faq__panel">
-//             <div className="faq__panel__inner">
-//               <p>
-//                 Yes—space planning, cabinet layouts, fixture selections, and
-//                 finish guides are included. We’ll help you make confident
-//                 decisions quickly.
-//               </p>
-//             </div>
-//           </div>
-//         </details>
-
-//         <details>
-//           <summary>Can you work in phases?</summary>
-//           <div className="faq__panel">
-//             <div className="faq__panel__inner">
-//               <p>
-//                 Absolutely. We can split projects to fit your schedule and
-//                 budget while minimizing downtime in your home.
-//               </p>
-//             </div>
-//           </div>
-//         </details>
-
-//         <details>
-//           <summary>Do you pull permits?</summary>
-//           <div className="faq__panel">
-//             <div className="faq__panel__inner">
-//               <p>
-//                 Yes, we handle permits and coordinate inspections whenever
-//                 they’re required by your city or county.
-//               </p>
-//             </div>
-//           </div>
-//         </details>
-//       </div>
-
-//       {/* CTA */}
-//       <div className="service__cta" style={{ marginTop: "1rem" }}>
-//         <a className="btn btn--accent" href={`tel:${PHONE_TEL}`}>
-//           Call {PHONE_DISPLAY} for a Free Estimate
-//         </a>{" "}
-//         <Link className="btn" to="/contact">
-//           Get Free Estimate
-//         </Link>
-//       </div>
-//     </section>
-//   );
-// }
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import remodeling from "../assets/images/remodeling002.png";
 
 export default function Remodeling() {
   return (
@@ -205,7 +16,7 @@ export default function Remodeling() {
         />
         <link
           rel="canonical"
-          href="https://www.yoursite.com/services/remodeling"
+          href="https://www.spaceevolutionhouston.com/remodeling"
         />
       </Helmet>
 
@@ -220,7 +31,7 @@ export default function Remodeling() {
         <div className="serviceHub__media">
           <img
             className="serviceHub__img"
-            src="/images/remodeling-hero.jpg"
+            src={remodeling}
             alt="Modern remodeled kitchen and living space"
             loading="eager"
           />

@@ -52,22 +52,32 @@ export default function Navbar() {
           <span className="nav__brandText">Space Evolution</span>
         </Link>
 
-        {/* Desktop links (unchanged) */}
+        {/* Desktop links */}
         <ul className="nav__links" role="menubar" aria-label="Primary">
           <li role="none">
-            <Link to="/#about" className="nav__link">
+            <HashLink to="/#about" className="nav__link">
               About
-            </Link>
+            </HashLink>
           </li>
 
-          {/* Desktop dropdown handled by CSS/JS you already have */}
-          <li className="nav__item--hasSub" role="none">
+          {/* Services dropdown */}
+          <li
+            className="nav__item--hasSub"
+            role="none"
+            onMouseLeave={(e) => {
+              const p = e.currentTarget;
+              p.classList.remove("is-open");
+              const btn = p.querySelector(".nav__link--button");
+              if (btn) btn.setAttribute("aria-expanded", "false");
+            }}
+          >
             <button
               className="nav__link nav__link--button"
               aria-haspopup="true"
               aria-expanded="false"
               aria-controls="services-submenu"
               onClick={(e) => {
+                // toggle for click/touch/keyboard
                 const p = e.currentTarget.closest(".nav__item--hasSub");
                 const nowOpen = p.classList.toggle("is-open");
                 e.currentTarget.setAttribute(
@@ -76,6 +86,7 @@ export default function Navbar() {
                 );
               }}
               onBlur={(e) => {
+                // close when focus leaves the whole submenu group
                 setTimeout(() => {
                   const p = e.currentTarget.closest(".nav__item--hasSub");
                   if (p && !p.contains(document.activeElement)) {
@@ -94,7 +105,6 @@ export default function Navbar() {
             <ul id="services-submenu" className="nav__submenu" role="menu">
               <li role="none">
                 <Link
-                  role="menuitem"
                   to="/services/kitchen-remodeling"
                   className="nav__submenuLink"
                 >
@@ -103,7 +113,6 @@ export default function Navbar() {
               </li>
               <li role="none">
                 <Link
-                  role="menuitem"
                   to="/services/bathroom-remodeling"
                   className="nav__submenuLink"
                 >
@@ -112,7 +121,6 @@ export default function Navbar() {
               </li>
               <li role="none">
                 <Link
-                  role="menuitem"
                   to="/services/custom-cabinets"
                   className="nav__submenuLink"
                 >
@@ -120,26 +128,17 @@ export default function Navbar() {
                 </Link>
               </li>
               <li role="none">
-                <Link
-                  role="menuitem"
-                  to="/services/closets"
-                  className="nav__submenuLink"
-                >
+                <Link to="/services/closets" className="nav__submenuLink">
                   Closets
                 </Link>
               </li>
               <li role="none">
-                <Link
-                  role="menuitem"
-                  to="/services/painting"
-                  className="nav__submenuLink"
-                >
+                <Link to="/services/painting" className="nav__submenuLink">
                   Interior Painting
                 </Link>
               </li>
               <li role="none">
                 <Link
-                  role="menuitem"
                   to="/services/exterior-painting"
                   className="nav__submenuLink"
                 >
@@ -148,46 +147,40 @@ export default function Navbar() {
               </li>
               <li role="none">
                 <Link
-                  role="menuitem"
                   to="/services/drywall-sheetrock"
                   className="nav__submenuLink"
                 >
-                  Drywall & Sheetrock
+                  Drywall &amp; Sheetrock
+                </Link>
+              </li>
+              <li role="none">
+                <Link to="/services/siding" className="nav__submenuLink">
+                  Siding
                 </Link>
               </li>
               <li role="none">
                 <Link
-                  role="menuitem"
                   to="/services/patios-concrete"
                   className="nav__submenuLink"
                 >
-                  Patios & Concrete
+                  Patios &amp; Concrete
                 </Link>
               </li>
               <li role="none">
                 <Link
-                  role="menuitem"
                   to="/services/fencing-driveways"
                   className="nav__submenuLink"
                 >
-                  Fencing & Driveways
+                  Fencing &amp; Driveways
                 </Link>
               </li>
               <li role="none">
-                <Link
-                  role="menuitem"
-                  to="/services/plumbing"
-                  className="nav__submenuLink"
-                >
+                <Link to="/services/plumbing" className="nav__submenuLink">
                   Plumbing
                 </Link>
               </li>
               <li role="none">
-                <Link
-                  role="menuitem"
-                  to="/services/electrical"
-                  className="nav__submenuLink"
-                >
+                <Link to="/services/electrical" className="nav__submenuLink">
                   Electrical
                 </Link>
               </li>
@@ -195,14 +188,14 @@ export default function Navbar() {
           </li>
 
           <li role="none">
-            <Link to="/#gallery" className="nav__link">
+            <HashLink to="/#gallery" className="nav__link">
               Gallery
-            </Link>
+            </HashLink>
           </li>
           <li role="none">
-            <Link to="/#testimonials" className="nav__link">
+            <HashLink to="/#testimonials" className="nav__link">
               Testimonials
-            </Link>
+            </HashLink>
           </li>
           <li role="none">
             <Link to="/contact" className="nav__link">
@@ -227,9 +220,9 @@ export default function Navbar() {
           aria-controls="mobile-drawer"
           onClick={() => setOpen((v) => !v)}
         >
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
+          <span />
+          <span />
+          <span />
         </button>
       </div>
 
@@ -257,7 +250,6 @@ export default function Navbar() {
         </button>
 
         <div className="nav__drawerInner" ref={firstFocusable}>
-          {/* Top link back to Home hero */}
           <HashLink
             smooth
             to="/#hero"
@@ -267,7 +259,6 @@ export default function Navbar() {
             <span className="nav__brandText">Space Evolution</span>
           </HashLink>
 
-          {/* Primary links */}
           <ul className="nav__drawerLinks" role="menu" aria-label="Mobile">
             <li role="none">
               <HashLink
@@ -294,9 +285,7 @@ export default function Navbar() {
                 onClick={() => setMobileServicesOpen((v) => !v)}
               >
                 <span>Services</span>
-                <span className="nav__chev" aria-hidden="true">
-                  ▾
-                </span>
+                <span className="nav__chev">▾</span>
               </button>
 
               <ul id="mobile-services-submenu" className="nav__drawerSub">
@@ -370,7 +359,16 @@ export default function Navbar() {
                     className="nav__drawerLink"
                     onClick={closeAll}
                   >
-                    Drywall & Sheetrock
+                    Drywall &amp; Sheetrock
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/siding"
+                    className="nav__drawerLink"
+                    onClick={closeAll}
+                  >
+                    Siding
                   </Link>
                 </li>
                 <li>
@@ -379,7 +377,7 @@ export default function Navbar() {
                     className="nav__drawerLink"
                     onClick={closeAll}
                   >
-                    Patios & Concrete
+                    Patios &amp; Concrete
                   </Link>
                 </li>
                 <li>
@@ -388,7 +386,7 @@ export default function Navbar() {
                     className="nav__drawerLink"
                     onClick={closeAll}
                   >
-                    Fencing & Driveways
+                    Fencing &amp; Driveways
                   </Link>
                 </li>
                 <li>
@@ -444,7 +442,6 @@ export default function Navbar() {
           </ul>
         </div>
 
-        {/* focus trap end */}
         <span tabIndex={-1} ref={lastFocusable} />
       </aside>
     </nav>

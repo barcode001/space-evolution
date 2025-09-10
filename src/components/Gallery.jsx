@@ -2,17 +2,19 @@
 import React, { useState } from "react";
 
 // ✅ Import assets
-import kitchenBefore1 from "../assets/images/before-image2.jpg";
+import kitchenBefore1 from "../assets/images/kitchen001.png";
 import kitchenAfter1 from "../assets/images/after-image9.png";
 import bathroom from "../assets/images/bathroom.jpg";
 import bathroom2 from "../assets/images/bathroom2.jpg";
+import exterior1 from "../assets/images/exterior001.png";
+import exterior2 from "../assets/images/exterior002.png";
 const photos = [
   { id: 1, type: "kitchen", image: kitchenAfter1 },
   { id: 2, type: "bathroom", image: bathroom2 },
-  { id: 3, type: "exterior", image: kitchenAfter1 },
+  { id: 3, type: "exterior", image: exterior1 },
   { id: 4, type: "kitchen", image: kitchenBefore1 },
   { id: 5, type: "bathroom", image: bathroom },
-  { id: 6, type: "exterior", image: kitchenBefore1 },
+  { id: 6, type: "exterior", image: exterior2 },
 ];
 
 const filters = ["all", "kitchen", "bathroom", "exterior"];

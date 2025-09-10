@@ -19,7 +19,7 @@ export default function BathroomRemodeling() {
         />
         <link
           rel="canonical"
-          href="https://www.yoursite.com/services/bathroom-remodeling"
+          href="https://www.spaceevolutionhouston.com/services/bathroom-remodeling"
         />
 
         {/* OpenGraph */}
@@ -34,11 +34,11 @@ export default function BathroomRemodeling() {
         />
         <meta
           property="og:url"
-          content="https://www.yoursite.com/services/bathroom-remodeling"
+          content="https://www.spaceevolutionhouston.com/services/bathroom-remodeling"
         />
         <meta
           property="og:image"
-          content="https://www.yoursite.com/images/bathroom-remodel-og.jpg"
+          content="https://www.spaceevolutionhouston.com/images/bathroom-remodel-og.jpg"
         />
 
         {/* Local Business JSON-LD (service page flavor) */}
@@ -55,7 +55,7 @@ export default function BathroomRemodeling() {
               "@type": "LocalBusiness",
               name: "Space Evolution",
               telephone: "+1-346-479-1647",
-              url: "https://www.yoursite.com",
+              url: "https://www.spaceevolutionhouston.com/",
             },
             offers: {
               "@type": "Offer",
