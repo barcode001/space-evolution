@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import exterior from "../../assets/images/exterior002.png";
 
 export default function ExteriorPainting() {
   const phone = "346-479-1647";
@@ -48,7 +49,7 @@ export default function ExteriorPainting() {
 
       <div className="service__media">
         <img
-          src="/images/exterior-painting.jpg"
+          src={exterior}
           alt="Freshly painted Houston home exterior with clean trim and siding"
           className="service__img"
           loading="eager"
