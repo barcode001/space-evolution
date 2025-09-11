@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import clientInfo from "../config/clientInfo";
 import { FiPhoneCall } from "react-icons/fi";
+import logo from "../assets/images/space-evolution-logo.jpg";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -49,7 +50,14 @@ export default function Navbar() {
     <nav className="nav">
       <div className="nav__bar">
         <Link to="/" className="nav__brand" aria-label="Go to homepage">
-          <span className="nav__brandText">Space Evolution</span>
+          <img
+            className="logo"
+            src={logo}
+            alt="Space Evolution"
+            width={50}
+            height={50}
+            decoding="async"
+          />
         </Link>
 
         {/* Desktop links */}
