@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://spaceevolutionhouston.com/</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://spaceevolutionhouston.com/services</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://spaceevolutionhouston.com/contact</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Thank You Page (Optional) -->
+  <url>
+    <loc>https://spaceevolutionhouston.com/thank-you</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.40</priority>
+  </url>
+
+</urlset>
