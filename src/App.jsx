@@ -24,6 +24,7 @@ import PaintingFinishesHub from "pages/_PaintingFinishesHub";
 import OutdoorStructuralHub from "pages/_OutdoorStructuralHub";
 import UtilitiesHub from "pages/_UtilitiesHub";
 import Siding from "pages/services/Siding";
+import InteriorPainting from "pages/services/_InteriorPainting";
 
 function App() {
   return (
@@ -47,6 +48,10 @@ function App() {
           element={<ExteriorPainting />}
         />{" "}
         {/* <-- fix */}
+        <Route
+          path="/services/interior-painting"
+          element={<InteriorPainting />}
+        />
         <Route
           path="/services/drywall-sheetrock"
           element={<DrywallSheetrock />}

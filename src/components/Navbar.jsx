@@ -141,7 +141,10 @@ export default function Navbar() {
                 </Link>
               </li>
               <li role="none">
-                <Link to="/services/painting" className="nav__submenuLink">
+                <Link
+                  to="/services/interior-painting"
+                  className="nav__submenuLink"
+                >
                   Interior Painting
                 </Link>
               </li>

@@ -104,7 +104,7 @@ export default function PaintingFinishesHub() {
             Smooth walls, straight cut lines, and low-VOC finishes for living
             areas, kitchens, bedrooms, and baths.
           </p>
-          <Link className="serviceHub__cta" to="/services/painting">
+          <Link className="serviceHub__cta" to="/services/interior-painting">
             Learn more →
           </Link>
         </article>
