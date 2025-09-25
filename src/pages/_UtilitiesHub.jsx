@@ -49,7 +49,7 @@ export default function UtilitiesHub() {
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/utilities"
+          href="https://spaceevolutionhouston.com/services/utilities"
         />
         {/* Open Graph */}
         <meta property="og:title" content="Utilities | Electrical & Plumbing" />
