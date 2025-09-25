@@ -1,0 +1,34 @@
+@use "../abstracts/variables" as *;
+.thankyou {
+  padding: 4rem 0;
+  text-align: center;
+
+  &__wrap {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  &__message {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn--primary {
+    &:hover {
+      background: white !important;
+    }
+  }
+}
