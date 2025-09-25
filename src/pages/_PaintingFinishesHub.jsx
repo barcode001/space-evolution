@@ -14,16 +14,44 @@ export default function PaintingFinishesHub() {
         </title>
         <meta
           name="description"
-          content="Professional interior & exterior painting, drywall & sheetrock repair, texture matching, and siding prep/paint. Clean lines, smooth walls, long-lasting finishes."
+          content="Interior & exterior painting, drywall & sheetrock repair, texture matching, and siding prep/paint. Clean lines and long lasting finishes."
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/painting"
+          href="https://spaceevolutionhouston.com/services/painting"
         />
+
+        {/* Open Graph (Facebook, WhatsApp, iMessage) */}
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="Painting & Finishes" />
         <meta
           property="og:description"
           content="Premium prep-first process for crisp lines, smooth walls, and durable exterior coatings."
+        />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/services/painting"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        <meta
+          name="keywords"
+          content="painting Houston, drywall repair, texture matching, interior painting, exterior painting, siding painting"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Painting & Finishes" />
+        <meta
+          name="twitter:description"
+          content="Premium prep-first process for crisp lines, smooth walls, and durable exterior coatings."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
         />
       </Helmet>
 

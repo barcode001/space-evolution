@@ -48,8 +48,44 @@ export default function Siding() {
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/siding"
+          href="https://spaceevolutionhouston.com/services/siding"
         />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Siding Installation & Repair in Houston | Space Evolution"
+        />
+        <meta
+          property="og:description"
+          content="Hardie board, fiber cement, and engineered wood siding installs and repairs. Clean caulking, trim work, and durable painted finishes built for Houston."
+        />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/services/siding"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Siding Installation & Repair in Houston | Space Evolution"
+        />
+        <meta
+          name="twitter:description"
+          content="Houston siding pros for Hardie, engineered wood, and trim. Repairs, installs, caulking, and painted finishes that last."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* FAQ Structured Data */}
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>
 

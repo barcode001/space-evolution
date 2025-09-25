@@ -19,12 +19,35 @@ export default function OutdoorStructuralHub() {
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/outdoor"
+          href="https://spaceevolutionhouston.com/services/outdoor"
         />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
         <meta property="og:title" content="Outdoor & Structural" />
         <meta
           property="og:description"
-          content="Concrete, patios, and fences built for everyday life and Texas weather."
+          content="Concrete, patios, fencing, and driveways built for everyday life and Texas weather."
+        />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/services/outdoor"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Outdoor & Structural" />
+        <meta
+          name="twitter:description"
+          content="Curb appeal meets durability with patios, fencing, concrete, and driveways built right for Houston homes."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
         />
       </Helmet>
 

@@ -40,8 +40,44 @@ export default function Electrical() {
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/electrical"
+          href="https://spaceevolutionhouston.com/services/electrical"
         />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Electrical Services in Houston, TX | Space Evolution"
+        />
+        <meta
+          property="og:description"
+          content="Lighting layouts, outlet installs, panel upgrades, and code-compliant wiring for remodels or repairs. Serving Houston homeowners and contractors."
+        />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/services/electrical"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Electrical Services in Houston, TX | Space Evolution"
+        />
+        <meta
+          name="twitter:description"
+          content="Remodel-ready electrical service. Outlets, lighting, circuits, and safe wiring. Licensed & insured in Houston, TX."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* FAQ Schema */}
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>
 

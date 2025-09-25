@@ -12,8 +12,11 @@ export default function CustomCabinets() {
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/custom-cabinets"
+          href="https://spaceevolutionhouston.com/services/custom-cabinets"
         />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
         <meta
           property="og:title"
           content="Custom Cabinets & Closets | Space Evolution"
@@ -22,7 +25,29 @@ export default function CustomCabinets() {
           property="og:description"
           content="From shaker to modern slab—maximize storage with custom cabinets and closets designed for your home and lifestyle."
         />
-        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/services/custom-cabinets"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Custom Cabinets & Closets | Space Evolution"
+        />
+        <meta
+          name="twitter:description"
+          content="Cabinets, pantries, and walk-ins tailored to your space. Clean installs and lasting quality built for Houston homes."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
       </Helmet>
 
       <h1 className="service__title">Custom Cabinets & Closets</h1>

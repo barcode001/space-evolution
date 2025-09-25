@@ -40,11 +40,46 @@ export default function ExteriorPainting() {
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/exterior-painting"
+          href="https://spaceevolutionhouston.com/services/exterior-painting"
         />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Exterior Painting in Houston, TX | Space Evolution"
+        />
+        <meta
+          property="og:description"
+          content="Weather-ready exterior painting with expert prep. Siding, fascia, soffits, trim, and doors — primed and protected for Houston’s climate."
+        />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/services/exterior-painting"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Exterior Painting in Houston, TX | Space Evolution"
+        />
+        <meta
+          name="twitter:description"
+          content="Crisp lines and long-lasting curb appeal. Full exterior prep, siding repairs, and premium paints for Houston homes."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* FAQ Structured Data */}
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>
-
       <h1 className="service__title">Exterior Painting</h1>
 
       <div className="service__media">

@@ -42,8 +42,44 @@ export default function DrywallSheetrock() {
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/drywall-sheetrock"
+          href="https://spaceevolutionhouston.com/services/drywall-sheetrock"
         />
+
+        {/* Open Graph (for Facebook, Messenger, WhatsApp, etc.) */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Drywall & Sheetrock Repair in Houston, TX | Space Evolution"
+        />
+        <meta
+          property="og:description"
+          content="Drywall and texture pros in Houston. We patch, float, match, and prep your walls for smooth, paint-ready finishes."
+        />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/services/drywall-sheetrock"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Drywall & Sheetrock Repair in Houston, TX | Space Evolution"
+        />
+        <meta
+          name="twitter:description"
+          content="Drywall installation and repair with seamless texture matching and paint-ready finishes. Houston-based service."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* FAQ Schema (Structured Data) */}
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>
 

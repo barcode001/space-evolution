@@ -40,8 +40,44 @@ export default function FencingDriveways() {
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/fencing-driveways"
+          href="https://spaceevolutionhouston.com/services/fencing-driveways"
         />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Fencing & Driveways in Houston, TX | Space Evolution"
+        />
+        <meta
+          property="og:description"
+          content="Privacy fences, gate installs, concrete driveways, and repairs with clean finishes and lasting structure. Trusted service in Houston, TX."
+        />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/services/fencing-driveways"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Fencing & Driveways in Houston, TX | Space Evolution"
+        />
+        <meta
+          name="twitter:description"
+          content="Professional fencing and driveway installs with strong curb appeal. New builds, repairs, and concrete solutions in Houston."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* FAQ Structured Data */}
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>
 

@@ -14,8 +14,41 @@ export default function Closets() {
           rel="canonical"
           href="https://spaceevolutionhouston.com/services/closets"
         />
-      </Helmet>
 
+        {/* Open Graph (Facebook, WhatsApp, etc.) */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Closet Remodeling & Custom Storage | Space Evolution"
+        />
+        <meta
+          property="og:description"
+          content="Custom walk-in closets and built-in storage for Houston homes. Designed to maximize space with modern style."
+        />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/services/closets"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Closet Remodeling & Custom Storage | Space Evolution"
+        />
+        <meta
+          name="twitter:description"
+          content="Houston-based closet remodeling and smart storage solutions. Built-in shelves, drawers, and walk-ins that fit your lifestyle."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+      </Helmet>
       <h1 className="service__title">Closet Remodeling</h1>
 
       <div className="service__media">

@@ -40,8 +40,44 @@ export default function PatiosConcrete() {
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/patios-concrete"
+          href="https://spaceevolutionhouston.com/services/patios-concrete"
         />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Patios & Concrete in Houston, TX | Space Evolution"
+        />
+        <meta
+          property="og:description"
+          content="Durable concrete patios, walkways, and slabs with clean forms, rebar support, proper drainage, and pro-level finishes. Serving Houston homes."
+        />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/services/patios-concrete"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Patios & Concrete in Houston, TX | Space Evolution"
+        />
+        <meta
+          name="twitter:description"
+          content="Stamped and smooth-finish concrete patios, walkways, and more — built with rebar, slope, and clean edges. Houston concrete work done right."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* FAQ Structured Data */}
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>
 

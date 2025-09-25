@@ -19,10 +19,10 @@ export default function BathroomRemodeling() {
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/bathroom-remodeling"
+          href="https://spaceevolutionhouston.com/services/bathroom-remodeling"
         />
 
-        {/* OpenGraph */}
+        {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
@@ -34,14 +34,29 @@ export default function BathroomRemodeling() {
         />
         <meta
           property="og:url"
-          content="https://www.spaceevolutionhouston.com/services/bathroom-remodeling"
+          content="https://spaceevolutionhouston.com/services/bathroom-remodeling"
         />
         <meta
           property="og:image"
-          content="https://www.spaceevolutionhouston.com/images/bathroom-remodel-og.jpg"
+          content="https://spaceevolutionhouston.com/images/bathroom-remodel-og.jpg"
         />
 
-        {/* Local Business JSON-LD (service page flavor) */}
+        {/* Twitter Card (optional but recommended) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Bathroom Remodeling in Houston | Space Evolution"
+        />
+        <meta
+          name="twitter:description"
+          content="Tile, vanities, lighting, and plumbing upgrades for Houston homes. Licensed & insured bathroom remodelers."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/bathroom-remodel-og.jpg"
+        />
+
+        {/* Structured Data for Service Page */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -55,7 +70,7 @@ export default function BathroomRemodeling() {
               "@type": "LocalBusiness",
               name: "Space Evolution",
               telephone: "+1-346-479-1647",
-              url: "https://www.spaceevolutionhouston.com/",
+              url: "https://spaceevolutionhouston.com/",
             },
             offers: {
               "@type": "Offer",

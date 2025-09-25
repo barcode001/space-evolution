@@ -40,8 +40,44 @@ export default function Plumbing() {
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/plumbing"
+          href="https://spaceevolutionhouston.com/services/plumbing"
         />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Plumbing Services in Houston, TX | Space Evolution"
+        />
+        <meta
+          property="og:description"
+          content="Plumbing rough-ins, repipes, drain fixes, fixture installs, and leak repairs. Done cleanly, safely, and up to code in Houston homes."
+        />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/services/plumbing"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Plumbing Services in Houston, TX | Space Evolution"
+        />
+        <meta
+          name="twitter:description"
+          content="Licensed Houston plumbers for remodels and repairs. Fixture installs, repipes, drains, and leak fixes — done right and up to code."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* FAQ Structured Data */}
         <script type="application/ld+json">{JSON.stringify(faqLD)}</script>
       </Helmet>
 
