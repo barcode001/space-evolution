@@ -45,17 +45,33 @@ export default function UtilitiesHub() {
         <title>Utilities | Electrical & Plumbing Services in Houston</title>
         <meta
           name="description"
-          content="Licensed electrical and plumbing services: panel upgrades, lighting, outlets, leak repairs, water heaters, fixture installs, and code updates for remodels."
+          content="Licensed electrical and plumbing: panel upgrades, lighting, outlets, leak repairs, water heaters, fixture installs, and code updates for remodels."
         />
         <link
           rel="canonical"
           href="https://www.spaceevolutionhouston.com/services/utilities"
         />
+        {/* Open Graph */}
         <meta property="og:title" content="Utilities | Electrical & Plumbing" />
         <meta
           property="og:description"
           content="Safe, code-compliant electrical and plumbing—diagnostics, repairs, and upgrades."
         />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Utilities | Electrical & Plumbing"
+        />
+        <meta
+          name="twitter:description"
+          content="Safe, code-compliant electrical and plumbing—diagnostics, repairs, and upgrades."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+        {/* Structured Data */}
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 

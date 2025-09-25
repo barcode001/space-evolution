@@ -12,11 +12,45 @@ export default function Remodeling() {
         </title>
         <meta
           name="description"
-          content="Full home remodeling in Houston: kitchen remodels, bathroom renovations, custom cabinets and closets. Quality craftsmanship, clear timelines, and clean jobsites."
+          content="Full home remodeling in Houston: kitchen remodels, bathroom renovations, custom cabinets and closets. Quality work, clear timelines, clean jobsites."
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/remodeling"
+          href="https://spaceevolutionhouston.com/remodeling"
+        />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Remodeling Services | Kitchens, Bathrooms, Cabinets & Closets"
+        />
+        <meta
+          property="og:description"
+          content="Houston remodeling experts for kitchens, bathrooms, closets, and full-home renovations. Clean work, clear timelines, and lasting results."
+        />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/remodeling"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Remodeling Services | Kitchens, Bathrooms, Cabinets & Closets"
+        />
+        <meta
+          name="twitter:description"
+          content="Houston remodeling done right — from kitchens to custom closets. Professional finishes and clean job sites that respect your home."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
         />
       </Helmet>
 
