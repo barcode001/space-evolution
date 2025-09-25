@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Helmet } from "react-helmet-async";
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -59,6 +60,52 @@ export default function Contact() {
 
   return (
     <section className="contact section" id="contact">
+      <Helmet>
+        <title>Contact | Space Evolution Remodeling Houston</title>
+        <meta
+          name="description"
+          content="Contact Space Evolution for remodeling, painting, cabinets, and more in Houston. Call (346) 479-1647 or request a free estimate online."
+        />
+        <link
+          rel="canonical"
+          href="https://spaceevolutionhouston.com/contact"
+        />
+
+        {/* Open Graph for social sharing */}
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Contact | Space Evolution Remodeling"
+        />
+        <meta
+          property="og:description"
+          content="Need a quote? Call or message Space Evolution for home remodeling in Houston."
+        />
+        <meta
+          property="og:url"
+          content="https://spaceevolutionhouston.com/contact"
+        />
+        <meta
+          property="og:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Contact | Space Evolution Remodeling"
+        />
+        <meta
+          name="twitter:description"
+          content="Houston remodeling company: fast estimates, quality work. Call or message us today."
+        />
+        <meta
+          name="twitter:image"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
+        />
+      </Helmet>
+
       <div className="container contact__wrap">
         {/* Left: business + quick actions */}
         <div className="contact__info">
