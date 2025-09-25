@@ -10,9 +10,9 @@ import CallToAction from "./CallToAction";
 const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness", // or GeneralContractor
-  "@id": "https://www.spaceevolutionhouston.com/#business",
+  "@id": "https://spaceevolutionhouston.com/#business",
   name: "Space Evolution",
-  url: "https://www.spaceevolutionhouston.com/",
+  url: "https://spaceevolutionhouston.com/",
   telephone: "346-479-1647",
   areaServed: "Houston, TX",
   address: {
@@ -21,20 +21,19 @@ const orgJsonLd = {
     addressRegion: "TX",
     addressCountry: "US",
   },
-  image: "https://www.spaceevolutionhouston.com/images/logo.png",
+  image: "https://spaceevolutionhouston.com/images/logo.png",
   priceRange: "$$",
 };
 
 const siteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://www.spaceevolutionhouston.com/#website",
-  url: "https://www.spaceevolutionhouston.com/",
+  "@id": "https://spaceevolutionhouston.com/#website",
+  url: "https://spaceevolutionhouston.com/",
   name: "Space Evolution",
   potentialAction: {
     "@type": "SearchAction",
-    target:
-      "https://www.spaceevolutionhouston.com/search?q={search_term_string}",
+    target: "https://spaceevolutionhouston.com/search?q={search_term_string}",
     "query-input": "required name=search_term_string",
   },
 };
@@ -59,13 +58,10 @@ function Home() {
           property="og:description"
           content="Kitchens, bathrooms, painting, patios, fencing and more."
         />
-        <meta
-          property="og:url"
-          content="https://www.spaceevolutionhouston.com/"
-        />
+        <meta property="og:url" content="https://spaceevolutionhouston.com/" />
         <meta
           property="og:image"
-          content="https://www.spaceevolutionhouston.com/images/og-home.jpg"
+          content="https://spaceevolutionhouston.com/images/og-home.jpg"
         />
         <meta name="twitter:card" content="summary_large_image" />
         {/* JSON-LD */}
