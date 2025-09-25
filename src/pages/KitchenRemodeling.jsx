@@ -8,7 +8,7 @@ export default function KitchenRemodeling() {
         <title>Kitchen Remodeling in Houston | Space Evolution</title>
         <meta
           name="description"
-          content="Upgrade your kitchen with Space Evolution. We provide custom cabinets, countertops, flooring, and full kitchen remodeling in Houston and surrounding areas."
+          content="Custom cabinets, countertops, flooring, and full kitchen remodeling in Houston. Functional layouts, clean installs, and modern finishes."
         />
         <meta
           name="keywords"
@@ -16,8 +16,9 @@ export default function KitchenRemodeling() {
         />
         <link
           rel="canonical"
-          href="https://www.spaceevolutionhouston.com/services/kitchen"
+          href="https://spaceevolutionhouston.com/services/kitchen-remodeling"
         />
+
         {/* Open Graph for social sharing */}
         <meta
           property="og:title"
@@ -30,11 +31,11 @@ export default function KitchenRemodeling() {
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://www.spaceevolutionhouston.com/services/kitchen"
+          content="https://spaceevolutionhouston.com/services/kitchen-remodeling"
         />
         <meta
           property="og:image"
-          content="https://www.spaceevolutionhouston.com/images/kitchen-remodel.jpg"
+          content="https://www.spaceevolutionhouston.com/images/og-home.png"
         />
       </Helmet>
 
