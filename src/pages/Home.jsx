@@ -21,7 +21,7 @@ const orgJsonLd = {
     addressRegion: "TX",
     addressCountry: "US",
   },
-  image: "https://spaceevolutionhouston.com/images/logo.png",
+  image: "https://spaceevolutionhouston.com/images/logo.jpg",
   priceRange: "$$",
 };
 
@@ -61,7 +61,7 @@ function Home() {
         <meta property="og:url" content="https://spaceevolutionhouston.com/" />
         <meta
           property="og:image"
-          content="https://spaceevolutionhouston.com/images/og-home.jpg"
+          content="https://spaceevolutionhouston.com/images/og-home.png"
         />
         <meta name="twitter:card" content="summary_large_image" />
         {/* JSON-LD */}
