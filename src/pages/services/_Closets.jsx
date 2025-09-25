@@ -10,6 +10,10 @@ export default function Closets() {
           name="description"
           content="Maximize your space with custom closet remodeling. Built-in shelving, walk-in closets, and smart storage solutions in Houston."
         />
+        <link
+          rel="canonical"
+          href="https://spaceevolutionhouston.com/services/closets"
+        />
       </Helmet>
 
       <h1 className="service__title">Closet Remodeling</h1>
