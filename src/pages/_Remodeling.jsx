@@ -16,7 +16,7 @@ export default function Remodeling() {
         />
         <link
           rel="canonical"
-          href="https://spaceevolutionhouston.com/remodeling"
+          href="https://spaceevolutionhouston.com/services/remodeling"
         />
 
         {/* Open Graph */}
@@ -31,7 +31,7 @@ export default function Remodeling() {
         />
         <meta
           property="og:url"
-          content="https://spaceevolutionhouston.com/remodeling"
+          content="https://spaceevolutionhouston.com/services/remodeling"
         />
         <meta
           property="og:image"
