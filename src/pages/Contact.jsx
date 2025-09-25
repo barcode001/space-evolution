@@ -30,7 +30,7 @@ export default function Contact() {
 
     try {
       setLoading(true);
-      await emailjs.send(
+      const response = await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
         {
@@ -39,16 +39,20 @@ export default function Contact() {
           email,
           service,
           message,
-          // helpful extra fields:
           submitted_at: new Date().toISOString(),
           source_page: window.location.pathname,
         },
         PUBLIC_KEY
       );
+
+      console.log("EmailJS response:", response); // 👈 add this
       setStatus({ type: "ok", msg: "Thanks! We’ll get back to you shortly." });
       formRef.current.reset();
     } catch (err) {
-      console.error(err);
+      console.error("EmailJS error:", err); // 👈 add this
+      console.log("✅ SERVICE_ID:", import.meta.env.VITE_EMAILJS_SERVICE_ID);
+      console.log("✅ TEMPLATE_ID:", import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+      console.log("✅ PUBLIC_KEY:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
       setStatus({
         type: "error",
         msg: "Something went wrong sending your message. Please call or email us.",
