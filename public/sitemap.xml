@@ -8,11 +8,103 @@
     <priority>1.00</priority>
   </url>
 
-  <!-- Services Page -->
+  <!-- Services Hub Page -->
   <url>
-    <loc>https://spaceevolutionhouston.com/services</loc>
+    <loc>https://spaceevolutionhouston.com/services/remodeling</loc>
     <lastmod>2025-09-25</lastmod>
     <priority>0.85</priority>
+  </url>
+
+    <url>
+    <loc>https://spaceevolutionhouston.com/services/painting</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+     <url>
+    <loc>https://spaceevolutionhouston.com/services/outdoor</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+    <url>
+    <loc>https://spaceevolutionhouston.com/services/utilities</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+
+<!-- Services Page -->
+  <url>
+    <loc>https://spaceevolutionhouston.com/services/kitchen-remodeling</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+    <url>
+    <loc>https://spaceevolutionhouston.com/services/bathroom-remodeling</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+     <url>
+    <loc>https://spaceevolutionhouston.com/services/custom-cabinets</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+    <url>
+    <loc>https://spaceevolutionhouston.com/services/closets</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+      <url>
+    <loc>https://spaceevolutionhouston.com/services/interior-painting</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+      <url>
+    <loc>https://spaceevolutionhouston.com/services/exterior-painting</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+      <url>
+    <loc>https://spaceevolutionhouston.com/services/drywall-sheetrock</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+      <url>
+    <loc>https://spaceevolutionhouston.com/services/siding</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+      <url>
+    <loc>https://spaceevolutionhouston.com/services/patios-concrete</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+      <url>
+    <loc>https://spaceevolutionhouston.com/services/fencing-driveways</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+      <url>
+    <loc>https://spaceevolutionhouston.com/services/plumbing</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+      <url>
+    <loc>https://spaceevolutionhouston.com/services/electrical</loc>
+    <lastmod>2025-09-25</lastmod>
+    <priority>0.80</priority>
   </url>
 
   <!-- Contact Page -->
@@ -28,5 +120,6 @@
     <lastmod>2025-09-25</lastmod>
     <priority>0.40</priority>
   </url>
+  
 
 </urlset>
