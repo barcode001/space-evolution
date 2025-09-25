@@ -46,7 +46,7 @@ function Home() {
         <title>Space Evolution | Remodeling & Painting in Houston, TX</title>
         <meta
           name="description"
-          content="Houston remodeling and painting pros. Kitchens, bathrooms, custom cabinets, drywall, exterior painting, patios, fencing, electrical & plumbing coordination."
+          content="Houston remodeling and painting. Kitchens, bathrooms, custom cabinets, drywall, exterior painting, patios, fencing, electrical & plumbing coordination."
         />
         <link rel="canonical" href="https://www.spaceevolutionhouston.com/" />
         {/* Open Graph / Twitter */}
